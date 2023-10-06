@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
     {
         ActivateCanvas(UICanvas.Tutorial);
     }
-
+    
     public void ActivateCreditsCanvas()
     {
         ActivateCanvas(UICanvas.Credits);
