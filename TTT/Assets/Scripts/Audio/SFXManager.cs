@@ -10,6 +10,7 @@ public class SFXManager : MonoBehaviour
     public AudioClip shooting;
     public AudioClip bossDamage;
     public AudioClip itemPickup;
+    public AudioClip projectileCollision;
 
     private AudioSource audioSource;
 

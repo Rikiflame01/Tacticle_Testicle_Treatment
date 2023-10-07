@@ -6,7 +6,15 @@ public class ProjectileCollisionScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check if the projectile collided with an enemy
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage);
+        }
+        else
+        {
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision);
+        }
+
         HealthComponent enemyHealth = collision.gameObject.GetComponent<HealthComponent>();
         if (enemyHealth)
         {

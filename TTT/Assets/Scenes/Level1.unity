@@ -2930,6 +2930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crab-monster
       objectReference: {fileID: 0}
+    - target: {fileID: 100174, guid: 5779b1a41ccf45b45bfc238034373133, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 400174, guid: 5779b1a41ccf45b45bfc238034373133, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.5328
@@ -3353,7 +3357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c8122783a17554d9e6f1eeadafbd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []

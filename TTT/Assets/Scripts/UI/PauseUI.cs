@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.pause);
             if (isPaused)
             {
                 Resume();

@@ -29,6 +29,7 @@ public class FPS_Shooting : MonoBehaviour
 
     void Shoot()
     {
+        SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
         GameObject bullet = Instantiate(bulletPrefab, gunMuzzle.position, gunMuzzle.rotation);
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
 
