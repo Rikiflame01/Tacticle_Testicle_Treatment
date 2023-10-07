@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // Required for accessing scene information
 
 public class MouseLook : MonoBehaviour
 {
@@ -9,6 +10,29 @@ public class MouseLook : MonoBehaviour
     private float mouseX;
     private float mouseY;
     private float xRotation = 0f;
+
+    private void Start()
+    {
+        SetCursorState();
+    }
+
+    private void SetCursorState()
+    {
+        // Get the current active scene's name
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        // If the current scene is "GameScene" or "MainMenu", unlock the cursor
+        if (currentScene == "GameScene" || currentScene == "MainMenu")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
 
     public void ReceiveInput(Vector2 _mouseInput)
     {
