@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 1235824493}
   - component: {fileID: 1235824492}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,7 +709,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 79ad5320c08541e469fbb26180f0fb26,
         type: 3}
       propertyPath: m_Name
-      value: Slime
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 79ad5320c08541e469fbb26180f0fb26,
         type: 3}
