@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required for accessing scene information
+using UnityEngine.SceneManagement;
 
 public class MouseLook : MonoBehaviour
 {
@@ -10,18 +10,24 @@ public class MouseLook : MonoBehaviour
     private float mouseX;
     private float mouseY;
     private float xRotation = 0f;
+    private bool isPaused = false;
 
     private void Start()
     {
         SetCursorState();
+        GameEvents.OnGamePaused += Pause;
+        GameEvents.OnGameResumed += Resume;
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.OnGamePaused -= Pause;
+        GameEvents.OnGameResumed -= Resume;
     }
 
     private void SetCursorState()
     {
-        // Get the current active scene's name
         string currentScene = SceneManager.GetActiveScene().name;
-
-        // If the current scene is "GameScene" or "MainMenu", unlock the cursor
         if (currentScene == "GameScene" || currentScene == "MainMenu")
         {
             Cursor.lockState = CursorLockMode.None;
@@ -42,11 +48,24 @@ public class MouseLook : MonoBehaviour
 
     private void Update()
     {
+        if (isPaused)
+            return;
+
         transform.Rotate(Vector3.up * mouseX * Time.deltaTime);
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -xClamp, xClamp);
         Vector3 targetRotation = transform.eulerAngles;
         targetRotation.x = xRotation;
         playerCamera.eulerAngles = targetRotation;
+    }
+
+    private void Pause()
+    {
+        isPaused = true;
+    }
+
+    private void Resume()
+    {
+        isPaused = false;
     }
 }
