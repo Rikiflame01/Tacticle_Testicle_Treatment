@@ -14,7 +14,7 @@ public class HealthComponent : MonoBehaviour
 
     private HealthBarUI healthBarUI; // Reference to the health bar UI
 
-    private void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
 
@@ -29,6 +29,8 @@ public class HealthComponent : MonoBehaviour
         }
 
         OnHealthChanged?.Invoke(currentHealth);
+
+
     }
 
     public void TakeDamage(int damage)
@@ -45,6 +47,7 @@ public class HealthComponent : MonoBehaviour
 
     private void Die()
     {
+        Debug.Log("Entity Died");
         OnDied?.Invoke();
     }
 }
