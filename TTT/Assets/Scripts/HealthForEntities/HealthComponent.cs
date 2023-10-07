@@ -47,7 +47,6 @@ public class HealthComponent : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Entity Died");
         OnDied?.Invoke();
     }
 }

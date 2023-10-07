@@ -6,7 +6,6 @@ public class ProjectileCollisionScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Projectile collided with " + collision.gameObject.name);
         // Check if the projectile collided with an enemy
         HealthComponent enemyHealth = collision.gameObject.GetComponent<HealthComponent>();
         if (enemyHealth)

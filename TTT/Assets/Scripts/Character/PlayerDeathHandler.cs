@@ -39,7 +39,6 @@ public class PlayerDeathHandler : MonoBehaviour
 
     private void HandlePlayerDeath()
     {
-        Debug.Log("Handling Player Death");
         OnPlayerDied?.Invoke();
     }
 }
