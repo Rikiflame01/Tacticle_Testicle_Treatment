@@ -9,15 +9,15 @@ public class MusicManager : MonoBehaviour
     public AudioClip bossMusic;
     public AudioClip deathMusic;
     public AudioClip victoryMusic;
-    public AudioClip[] organLevelsMusic; // An array to hold music for each organ level
+    public AudioClip[] organLevelsMusic; 
 
     private AudioSource audioSource;
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject); // Ensure the music manager persists across scenes
+        DontDestroyOnLoad(gameObject); 
         audioSource = GetComponent<AudioSource>();
-        SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to the sceneLoaded event
+        SceneManager.sceneLoaded += OnSceneLoaded; 
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -33,7 +33,7 @@ public class MusicManager : MonoBehaviour
             default:
                 if (scene.name.StartsWith("Level"))
                 {
-                    int levelIndex = int.Parse(scene.name.Substring(5)) - 1; // Extract the level number
+                    int levelIndex = int.Parse(scene.name.Substring(5)) - 1; 
                     if (levelIndex < organLevelsMusic.Length)
                     {
                         PlayMusic(organLevelsMusic[levelIndex]);
@@ -66,6 +66,6 @@ public class MusicManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded; // Unsubscribe from the sceneLoaded event
+        SceneManager.sceneLoaded -= OnSceneLoaded; 
     }
 }
