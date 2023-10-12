@@ -8,6 +8,7 @@ public class QuizQuestionSO : ScriptableObject
     [SerializeField][TextArea] private string QuestionText;
     [SerializeField] private QuestionAnswerSt[] QuestionAnswers = new QuestionAnswerSt[4];
     private int QuestionIndex;
+    private int QuestionLevel;
 
     public string GetQuestionText() => QuestionText;
 
@@ -22,4 +23,8 @@ public class QuizQuestionSO : ScriptableObject
     public int GetQuestionIndex() => QuestionIndex;
 
     public void SetQuestionIndex(int index) => QuestionIndex = index;
+
+    public int GetQuestionLevel() => QuestionLevel;
+
+    public void SetQuestionLevel(int level) => QuestionLevel = level;
 }

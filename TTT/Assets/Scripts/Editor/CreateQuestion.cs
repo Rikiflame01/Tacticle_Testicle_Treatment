@@ -8,6 +8,7 @@ public class CreateQuestion : EditorWindow
     private string question;
     private string[] answers = new string[4];
     private bool[] IsCorrect = new bool[4];
+    private int QuestionLevel;
 
     [MenuItem("Tools/Create Question %q")]
     public static void ShowWindow()
@@ -19,6 +20,9 @@ public class CreateQuestion : EditorWindow
     {
         GUILayout.Label("Make a Question.", EditorStyles.boldLabel);
         question = EditorGUILayout.TextField("Question Text", question, GUILayout.ExpandHeight(true), GUILayout.MaxHeight(200));
+        GUILayout.Label("---------------------------------------------------", EditorStyles.boldLabel);
+        GUILayout.Label("Question Level: ", EditorStyles.boldLabel);
+        QuestionLevel = EditorGUILayout.IntSlider(QuestionLevel, 1, 10);
         GUILayout.Label("---------------------------------------------------", EditorStyles.boldLabel);
         EditorGUILayout.BeginVertical();
         {
@@ -80,6 +84,7 @@ public class CreateQuestion : EditorWindow
         var questionSO = ScriptableObject.CreateInstance<QuizQuestionSO>();
         questionSO.SetQuestionText(question);
         questionSO.SetQuestionAnswers(questionAnswerSts);
+        questionSO.SetQuestionLevel(QuestionLevel);
         questionSO.SetQuestionIndex(gameDataSO.GetQuestionIndex());
         gameDataSO.IncrementQuestionIndex();
 
