@@ -5,7 +5,6 @@ public class Movement : MonoBehaviour
     [SerializeField] private CharacterController controller;
     [SerializeField] private float speed = 200f;
     [SerializeField] private float gravity = -30f;
-    [SerializeField] private float jumpHeight = 3.5f;
     private Vector3 verticalVelocity;
     private Vector2 horizontalInput;
 
