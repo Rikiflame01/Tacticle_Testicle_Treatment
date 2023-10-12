@@ -8,7 +8,6 @@ public class Movement : MonoBehaviour
     [SerializeField] private float jumpHeight = 3.5f;
     private Vector3 verticalVelocity;
     private Vector2 horizontalInput;
-    private bool jump;
 
     public void ReceiveInput(Vector2 _horizontalInput)
     {
@@ -21,18 +20,9 @@ public class Movement : MonoBehaviour
         horizontalVelocity *= speed;
         controller.Move(horizontalVelocity * Time.deltaTime);
 
-        if (jump && controller.isGrounded)
-        {
-            verticalVelocity.y = Mathf.Sqrt(-2 * jumpHeight * gravity);
-        }
-
         verticalVelocity.y += gravity * Time.deltaTime;
         controller.Move(verticalVelocity * Time.deltaTime);
-        jump = false;
+
     }
 
-    public void OnJumpPressed()
-    {
-        jump = true;
-    }
 }

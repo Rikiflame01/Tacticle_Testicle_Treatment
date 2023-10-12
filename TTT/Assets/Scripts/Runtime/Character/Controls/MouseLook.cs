@@ -5,7 +5,6 @@ public class MouseLook : MonoBehaviour
 {
     [SerializeField] private Transform playerCamera;
     [SerializeField] private float sensitivityX = 8f;
-    [SerializeField] private float xClamp = 85f;
     private float mouseX;
     private bool isPaused = false;
 
