@@ -6,25 +6,23 @@ using UnityEngine;
 public class QuestionAnswerSt
 {
     #region FIELDS
-        
+
     [SerializeField] private string AnswerText;
     [SerializeField] private bool IsCorrect;
-        
-    #endregion
 
-    #region UNITY METHODS
-    #endregion
+    #endregion FIELDS
 
     #region METHODS
-        
-    public string GetAnswerText()
+
+    public QuestionAnswerSt(string answerText, bool isCorrect)
     {
-        return AnswerText;
+        AnswerText = answerText;
+        IsCorrect = isCorrect;
     }
-    public bool GetIsCorrect()
-    {
-        return IsCorrect;
-    }
-        
-    #endregion
+
+    public string GetAnswerText() => AnswerText;
+
+    public bool GetIsCorrect() => IsCorrect;
+
+    #endregion METHODS
 }

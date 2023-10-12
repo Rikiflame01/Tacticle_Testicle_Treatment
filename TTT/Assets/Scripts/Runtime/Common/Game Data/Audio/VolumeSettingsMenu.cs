@@ -124,11 +124,8 @@ using UnityEngine.SceneManagement;
                 sfxMute = false;
             }
         }
-        
-        public void BackBtnClicked()
-        {
-            SceneManager.LoadScene(PreviousSceneIndex);
-        }
-        
-        #endregion
-    }
+
+    public void BackBtnClicked() => SceneManager.LoadScene(PreviousSceneIndex);
+
+    #endregion
+}

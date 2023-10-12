@@ -10,19 +10,18 @@ namespace Common.GameData
 
         [Header("Health Settings")]
         public int maxHealth;
+
         public int currentHealth;
         public bool isDead;
 
-        #endregion
+        #endregion FIELDS
 
         #region METHODS
 
         public void Reset()
         {
-            
-            
             currentHealth = maxHealth;
-            
+
             isDead = false;
         }
 
@@ -54,26 +53,19 @@ namespace Common.GameData
                 currentHealth = maxHealth;
             }
         }
-        public int GetHealth()
-        {
-            return currentHealth;
-        }
-        
-        public bool GetIsDead()
-        {
-            return isDead;
-        }
-        public void setMaxHealth(int max)
-        {
-            maxHealth = max;
-        }
+
+        public int GetHealth() => currentHealth;
+
+        public bool GetIsDead() => isDead;
+
+        public void setMaxHealth(int max) => maxHealth = max;
+
         public void kill()
         {
             currentHealth = 0;
             isDead = true;
         }
-        
 
-        #endregion
+        #endregion METHODS
     }
 }
