@@ -77,20 +77,31 @@ public class CreateQuestion : EditorWindow
     private void CreateQuestionSO()
     {
         QuestionAnswerSt[] questionAnswerSts = new QuestionAnswerSt[4];
+        Debug.Log("Creating answer array");
         for (int i = 0; i < 4; i++)
         {
             questionAnswerSts[i] = new QuestionAnswerSt(answers[i], IsCorrect[i]);
+            Debug.Log("Answer: " + i);
         }
         var questionSO = ScriptableObject.CreateInstance<QuizQuestionSO>();
+        Debug.Log("Made Temp QuestionSO");
         questionSO.SetQuestionText(question);
+        Debug.Log("Set Question Text");
         questionSO.SetQuestionAnswers(questionAnswerSts);
+        Debug.Log("Set Question Answers with made array");
         questionSO.SetQuestionLevel(QuestionLevel);
+        Debug.Log("Set Question Level");
         questionSO.SetQuestionIndex(gameDataSO.GetQuestionIndex());
+        Debug.Log("Set Question Index");
         gameDataSO.AddQusetionToArray(questionSO);
+        Debug.Log("Added Question game data to Array");
         gameDataSO.IncrementQuestionIndex();
+        Debug.Log("Incremented Question Index");
 
         AssetDatabase.CreateAsset(questionSO, AssetDatabase.GenerateUniqueAssetPath("Assets/Scriptable Objects/Questions/QuizQuestion_.asset"));
+        Debug.Log("Make asset");
         AssetDatabase.SaveAssets();
+        Debug.Log("Save asset");
 
         EditorUtility.FocusProjectWindow();
         Selection.activeObject = questionSO;

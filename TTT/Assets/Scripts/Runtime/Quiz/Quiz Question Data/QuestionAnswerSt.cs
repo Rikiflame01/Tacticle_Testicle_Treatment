@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public struct QuestionAnswerSt
+public class QuestionAnswerSt
 {
     #region FIELDS
 
@@ -19,6 +19,7 @@ public struct QuestionAnswerSt
         AnswerText = answerText;
         IsCorrect = isCorrect;
     }
+
 
     public string GetAnswerText() => AnswerText;
 

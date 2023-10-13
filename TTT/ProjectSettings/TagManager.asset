@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Boss
+  - QuestionPanel
+  - AnswerButtons
+  - Answer_Button_1
+  - Answer_Button_2
+  - Answer_Button_3
+  - Answer_Button_4
+  - QuizPanel
+  - Question_Text
   layers:
   - Default
   - TransparentFX
