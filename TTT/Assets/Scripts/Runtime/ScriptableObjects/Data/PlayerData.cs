@@ -1,4 +1,5 @@
 using Common.PlayerData;
+using TTT.Common.PlayerData;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerData", menuName = "ScriptableObjects/PlayerData", order = 90)]
@@ -7,6 +8,7 @@ public class PlayerData : ScriptableObject
     #region FIELDS
 
     public Health health;
+    public PlayerQuizResultsSt playerResults;
 
     #endregion FIELDS
 
@@ -15,6 +17,7 @@ public class PlayerData : ScriptableObject
     public void Reset()
     {
         ResetHealth();
+        ResetResults();
     }
 
     #region HEALTH
@@ -32,8 +35,14 @@ public class PlayerData : ScriptableObject
     public void SetMaxHealth(int max) => health.setMaxHealth(max);
 
     public void Kill() => health.kill();
-
     #endregion HEALTH
+    #region QUIZRESULTS
+
+    public void ResetResults() => playerResults.resetQuizResults();
+
+    public void AnswereQuestion(QuizQuestionSO Quest, int Answer) => playerResults.AnswereQuestion(Quest, Answer);
+    public int GetNumQuestionsAnswered() => playerResults.GetNumQuestionsAnswered();
+    #endregion QUIZRESULTS
 
     #endregion METHODS
 }

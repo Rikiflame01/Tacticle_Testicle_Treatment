@@ -68,9 +68,9 @@ public class CreateQuestion : EditorWindow
         {
             CreateQuestionSO();
         }
-        if (GUILayout.Button("Reset Question Index"))
+        if (GUILayout.Button("Reset Questions"))
         {
-            gameDataSO.ResetQuestionIndex();
+            gameDataSO.ResetQuestions();
         }
     }
 
@@ -86,6 +86,7 @@ public class CreateQuestion : EditorWindow
         questionSO.SetQuestionAnswers(questionAnswerSts);
         questionSO.SetQuestionLevel(QuestionLevel);
         questionSO.SetQuestionIndex(gameDataSO.GetQuestionIndex());
+        gameDataSO.AddQusetionToArray(questionSO);
         gameDataSO.IncrementQuestionIndex();
 
         AssetDatabase.CreateAsset(questionSO, AssetDatabase.GenerateUniqueAssetPath("Assets/Scriptable Objects/Questions/QuizQuestion_.asset"));
