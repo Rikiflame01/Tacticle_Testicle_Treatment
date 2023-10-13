@@ -1,10 +1,9 @@
 ﻿using Common;
-using Common.GameData;
 using UnityEngine;
 
 namespace ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "GameDataSO", menuName = "ScriptableObjects/GamDataSO", order = 90)]
+    [CreateAssetMenu(fileName = "GameDataSO", menuName = "ScriptableObjects/GameDataSO", order = 90)]
     public class GameDataSO : ScriptableObject
     {
         public QuizDataSt quizDataSt;
