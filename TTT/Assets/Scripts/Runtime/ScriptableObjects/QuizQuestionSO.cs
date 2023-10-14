@@ -6,8 +6,8 @@ public class QuizQuestionSO : ScriptableObject
 {
     [SerializeField][TextArea] private string QuestionText;
     [SerializeField] private QuestionAnswerSt[] QuestionAnswers = new QuestionAnswerSt[4];
-    private int QuestionIndex;
-    private int QuestionLevel;
+    public int QuestionIndex;
+    public int QuestionLevel;
 
     public string GetQuestionText() => QuestionText;
 
@@ -16,6 +16,7 @@ public class QuizQuestionSO : ScriptableObject
     public QuestionAnswerSt[] GetQuestionAnswers() => QuestionAnswers;
 
     public void SetQuestionAnswers(QuestionAnswerSt[] answers) => QuestionAnswers = answers;
+
     public string[] GetAnswerText()
     {
         string[] tmp = new string[4];

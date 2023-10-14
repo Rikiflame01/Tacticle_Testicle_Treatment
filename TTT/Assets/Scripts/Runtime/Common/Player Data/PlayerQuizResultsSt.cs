@@ -9,37 +9,34 @@ namespace TTT.Common.PlayerData
     {
         #region FIELDS
 
-        public QuizQuestionSO[] QuestionsAnswered {  get; set; }
+        public QuizQuestionSO[] QuestionsAnswered;
         private int QuestionIndex;
-        public int[] QuestionsAnswers {  get; set; }
-        #endregion
+        public int[] QuestionsAnswers;
+
+        #endregion FIELDS
 
         #region METHODS
 
         public void resetQuizResults()
         {
             QuestionIndex = 0;
-            QuestionsAnswered = new QuizQuestionSO[0];
-            QuestionsAnswers = new int[0];
+            QuestionsAnswered = new QuizQuestionSO[100];
+            QuestionsAnswers = new int[100];
         }
 
         public void AnswereQuestion(QuizQuestionSO Quest, int Answer)
         {
             AddQuestion(Quest);
             AddAnswer(Answer);
+            QuestionIndex++;
         }
 
         private void AddQuestion(QuizQuestionSO quest) => QuestionsAnswered[QuestionIndex] = quest;
+
         private void AddAnswer(int Ans) => QuestionsAnswers[QuestionIndex] = Ans;
 
         public int GetNumQuestionsAnswered() => QuestionIndex;
 
-
-
-
-
-
-
-        #endregion
+        #endregion METHODS
     }
 }

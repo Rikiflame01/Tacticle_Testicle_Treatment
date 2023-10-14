@@ -11,6 +11,7 @@ namespace TTT
     public class QuizUI : MonoBehaviour
     {
         #region FIELDS
+
         private TextMeshProUGUI _QuestionTestBox;
         private Button[] _AnswerButtons = new Button[4];
         private TextMeshProUGUI[] _AnswerButtonTexts = new TextMeshProUGUI[4];
@@ -21,13 +22,13 @@ namespace TTT
         private GameObject _QuizUIPanel;
         private GameObject _AnswerButtonsPanel;
 
-
-        #endregion
+        #endregion FIELDS
 
         #region UNITY METHODS
 
         private void Start()
         {
+            PlayerData.Reset();
             _QuizUIPanel = GameObject.FindGameObjectWithTag("QuizPanel");
             _AnswerButtonsPanel = GameObject.FindGameObjectWithTag("AnswerButtons");
             _QuestionTestBox = _QuizUIPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -36,14 +37,12 @@ namespace TTT
                 _AnswerButtons[i] = _AnswerButtonsPanel.transform.GetChild(i).GetComponent<Button>();
                 _AnswerButtonTexts[i] = _AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
             }
-            float tmpScreenHeight = Screen.height;
+            /*float tmpScreenHeight = Screen.height;
             float tmpScreenWidth = Screen.width;
             print(tmpScreenWidth + ", " + tmpScreenHeight);
-            _AnswerButtonsPanel.GetComponent<GridLayout>().cellSize = new Vector2(tmpScreenWidth * 0.4f, tmpScreenHeight * 0.1f);
+            _AnswerButtonsPanel.GetComponent<GridLayout>() = new Vector2(tmpScreenWidth * 0.4f, tmpScreenHeight * 0.1f);
             _QuizUIPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(_QuizUIPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x * 0.99f, tmpScreenHeight * 0.99f);
-            _AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(_AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta.x, tmpScreenHeight * 0.4f);
-
-
+            _AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(_AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta.x, tmpScreenHeight * 0.4f);*/
 
             for (int i = 0; i < 4; i++)
                 _AnswerButtonTexts[i] = _AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
@@ -53,13 +52,28 @@ namespace TTT
             for (int i = 0; i < 4; i++)
                 _AnswerButtonTexts[i].text = answers[i];
         }
-        #endregion
+
+        #endregion UNITY METHODS
 
         #region METHODS
 
+        public void AnswerButtonClicked(int index)
+        {
+            PlayerData.AnswereQuestion(RandomQuestion, index);
+            if (RandomQuestion.IsCorrectAnswer(index))
+            {
+                //Add code for player buffs
+                print("Correct");
+            }
+            else
+                print("Wrong");
+            /*RandomQuestion = GameData.GetRandomQuestionInLevel(QuestionLevel);
+            _QuestionTestBox.text = RandomQuestion.GetQuestionText();
+            string[] answers = RandomQuestion.GetAnswerText();
+            for (int i = 0; i < 4; i++)
+                _AnswerButtonTexts[i].text = answers[i];*/
+        }
 
-
-
-        #endregion
+        #endregion METHODS
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Common;
 using UnityEngine;
+
 namespace ScriptableObjects
 {
     [CreateAssetMenu(fileName = "GameDataSO", menuName = "ScriptableObjects/GameDataSO", order = 90)]
@@ -18,8 +19,13 @@ namespace ScriptableObjects
         }
 
         public void IncrementQuestionIndex() => quizDataSt.IncrementQuestionIndex();
+
         public void AddQusetionToArray(QuizQuestionSO Quest) => quizDataSt.AddQuestion(Quest);
+
+        public void AddQuestionArray(QuizQuestionSO[] Quests) => quizDataSt.AddQuestionArray(Quests);
+
         public QuizQuestionSO[] GetQuizQuestionArray() => quizDataSt.GetQuestionArray();
+
         public QuizQuestionSO GetRandomQuestionInLevel(int level)
         {
             QuizQuestionSO[] questionSOs = quizDataSt.GetQuestionsInLevel(level);

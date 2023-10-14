@@ -22,3 +22,5 @@ MonoBehaviour:
     IsCorrect: 1
   - AnswerText: d3
     IsCorrect: 0
+  QuestionIndex: 2
+  QuestionLevel: 2

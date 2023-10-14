@@ -1,4 +1,5 @@
 using Common.PlayerData;
+using System;
 using TTT.Common.PlayerData;
 using UnityEngine;
 
@@ -35,13 +36,17 @@ public class PlayerData : ScriptableObject
     public void SetMaxHealth(int max) => health.setMaxHealth(max);
 
     public void Kill() => health.kill();
+
     #endregion HEALTH
+
     #region QUIZRESULTS
 
     public void ResetResults() => playerResults.resetQuizResults();
 
     public void AnswereQuestion(QuizQuestionSO Quest, int Answer) => playerResults.AnswereQuestion(Quest, Answer);
+
     public int GetNumQuestionsAnswered() => playerResults.GetNumQuestionsAnswered();
+
     #endregion QUIZRESULTS
 
     #endregion METHODS
