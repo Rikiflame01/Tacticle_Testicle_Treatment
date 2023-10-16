@@ -36,6 +36,7 @@ public class HealthComponent : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        Debug.Log("Entity's Current Health: " + currentHealth); // Add this line
         OnHealthChanged?.Invoke(currentHealth);
 
         if (currentHealth <= 0)
@@ -44,6 +45,7 @@ public class HealthComponent : MonoBehaviour
             Die();
         }
     }
+
 
     private void Die()
     {

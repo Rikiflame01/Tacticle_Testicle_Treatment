@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     private Transform eyeOrigin;
     private Transform playerTransform;
     private NavMeshAgent agent;
-    private bool isChasing = false;
+    public bool isChasing = false;
     private float timeOutOfSight = 0f;
     private int currentPatrolIndex = 0;
 

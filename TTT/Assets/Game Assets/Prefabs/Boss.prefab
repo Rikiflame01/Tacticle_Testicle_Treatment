@@ -91,10 +91,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100174, guid: 5779b1a41ccf45b45bfc238034373133,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1763399251525254323}
-    - targetCorrespondingSourceObject: {fileID: 100174, guid: 5779b1a41ccf45b45bfc238034373133,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: -5838591566355437162}
   m_SourcePrefab: {fileID: 100100000, guid: 5779b1a41ccf45b45bfc238034373133, type: 3}
 --- !u!1 &785080563472456933 stripped
@@ -184,22 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da18927589d7595478a8c0007d6f6cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1763399251525254323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785080563472456933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e89046fc4ecee0a4ab8fc6e1f07f4123, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: 1.5
-  attackDamage: 10
-  attackCooldown: 1.5
-  knockbackForce: 5
 --- !u!195 &-5838591566355437162
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -2516,10 +2516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89046fc4ecee0a4ab8fc6e1f07f4123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1.5
+  attackRange: 20
   attackDamage: 10
   attackCooldown: 1.5
-  knockbackForce: 5
+  knockbackForce: 0
 --- !u!195 &-4318215399455633833
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2554,11 +2554,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a21ddc6da0a504b8ec734b7b91c0ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRange: 2000
+  sightRange: 150
   chaseDuration: 5
   patrolPoints: []
-  patrolSpeed: 3.5
-  chaseSpeed: 10
+  patrolSpeed: 6
+  chaseSpeed: 20
+  isChasing: 0
 --- !u!1 &785080563472456935
 GameObject:
   m_ObjectHideFlags: 0
