@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100174, guid: 5779b1a41ccf45b45bfc238034373133, type: 3}
       propertyPath: m_Name
-      value: crab-monster Variant
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 100174, guid: 5779b1a41ccf45b45bfc238034373133, type: 3}
       propertyPath: m_TagString
@@ -91,11 +91,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100174, guid: 5779b1a41ccf45b45bfc238034373133,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7668574804726382661}
-    - targetCorrespondingSourceObject: {fileID: 100174, guid: 5779b1a41ccf45b45bfc238034373133,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1763399251525254323}
+      addedObject: {fileID: -5838591566355437162}
   m_SourcePrefab: {fileID: 100100000, guid: 5779b1a41ccf45b45bfc238034373133, type: 3}
 --- !u!1 &785080563472456933 stripped
 GameObject:
@@ -184,32 +180,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da18927589d7595478a8c0007d6f6cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7668574804726382661
-MonoBehaviour:
+--- !u!195 &-5838591566355437162
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785080563472456933}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41f4855f39f8de47a1f0df6629d4384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 20
---- !u!114 &1763399251525254323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785080563472456933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e89046fc4ecee0a4ab8fc6e1f07f4123, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: 1.5
-  attackDamage: 10
-  attackCooldown: 1.5
-  knockbackForce: 5
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
