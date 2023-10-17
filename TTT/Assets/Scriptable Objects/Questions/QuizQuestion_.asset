@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84194446bcd9a7940b5805804a7283aa, type: 3}
   m_Name: QuizQuestion_
   m_EditorClassIdentifier: 
-  QuestionText: What is the answer to life the univers and everything
+  QuestionText: Test 1
   QuestionAnswers:
-  - AnswerText: Cats
+  - AnswerText: a1
     IsCorrect: 1
-  - AnswerText: 42
-    IsCorrect: 1
-  - AnswerText: 98
+  - AnswerText: b1
     IsCorrect: 0
-  - AnswerText: 2
+  - AnswerText: c1
     IsCorrect: 0
+  - AnswerText: d1
+    IsCorrect: 0
+  QuestionIndex: 0
+  QuestionLevel: 1

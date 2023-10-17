@@ -20,6 +20,7 @@ public class QuestionAnswerSt
         IsCorrect = isCorrect;
     }
 
+
     public string GetAnswerText() => AnswerText;
 
     public bool GetIsCorrect() => IsCorrect;
