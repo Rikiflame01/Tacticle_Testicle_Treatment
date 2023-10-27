@@ -6,6 +6,7 @@ public class HealthComponent : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
+
     // UnityEvent that will be invoked when health changes
     public UnityEvent<int> OnHealthChanged;
 
@@ -36,7 +37,9 @@ public class HealthComponent : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Entity's Current Health: " + currentHealth); // Add this line
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Ensure health stays within bounds
+
+        Debug.Log("Entity's Current Health: " + currentHealth);
         OnHealthChanged?.Invoke(currentHealth);
 
         if (currentHealth <= 0)
