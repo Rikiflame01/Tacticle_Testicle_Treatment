@@ -43,7 +43,6 @@ public class HealthComponent : MonoBehaviour
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Ensure health stays within bounds
 
-        Debug.Log("Entity's Current Health: " + currentHealth);
         OnHealthChanged?.Invoke(currentHealth);
 
         if (currentHealth <= 0)
