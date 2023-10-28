@@ -29,7 +29,7 @@ namespace ScriptableObjects
         public QuizQuestionSO GetRandomQuestionInLevel(int level)
         {
             QuizQuestionSO[] questionSOs = quizDataSt.GetQuestionsInLevel(level);
-            int tmpRnd = Random.Range(0, questionSOs.Length);
+            int tmpRnd = Random.Range(0, questionSOs.Length - 1);
             return questionSOs[tmpRnd];
         }
     }

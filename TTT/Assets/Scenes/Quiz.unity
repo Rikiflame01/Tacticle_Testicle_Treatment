@@ -974,6 +974,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fe954ff6b3adb49b6c2334c9809ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UpgradeCanvas: {fileID: 421061491}
+  UpgradeChoice_1: {fileID: 1922002764}
+  UpgradeChoice_2: {fileID: 817456052}
   PlayerData: {fileID: 11400000, guid: ce88cf2f85e304a409079ef059be39e7, type: 2}
   GameData: {fileID: 11400000, guid: eb5e0694f252cf047a24e4e9e2793310, type: 2}
   PlayerAmmo: {fileID: 11400000, guid: 58ab14a8ebb00034db375b7d80242dc7, type: 2}

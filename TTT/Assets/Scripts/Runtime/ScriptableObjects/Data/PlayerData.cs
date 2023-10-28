@@ -63,7 +63,7 @@ public class PlayerData : ScriptableObject
     public void SetQuestionLevel(int level) => _QuestionLevel = level;
 
     [Tooltip("Returns the Question Level For the current Question")]
-    public int GetQuestionLevel() => _QuestionLevel;
+    public int GetQuestionLevel() => 1;
 
     #endregion QUIZ
 

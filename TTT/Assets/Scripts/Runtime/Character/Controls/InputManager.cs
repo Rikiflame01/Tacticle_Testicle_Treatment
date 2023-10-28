@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
         groundMovement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
         groundMovement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
     }
-    
+
     private void Update()
     {
         movement.ReceiveInput(horizontalInput);
