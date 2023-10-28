@@ -1,7 +1,9 @@
+using TTT;
 using UnityEngine;
 
 public class FPS_Shooting : MonoBehaviour
 {
+    public AmmoSO ammoSO;
     public Transform gunMuzzle;
     public GameObject bulletPrefab;
     public float shootingForce = 1000f;
@@ -19,7 +21,7 @@ public class FPS_Shooting : MonoBehaviour
         GameEvents.OnGameResumed -= Resume;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetButtonDown("Fire1") && !isPaused)  // Check if game is not paused
         {
@@ -27,8 +29,18 @@ public class FPS_Shooting : MonoBehaviour
         }
     }
 
-    void Shoot()
+    private void Shoot()
     {
+        if (!ammoSO.fire())
+        {
+            return;
+        }
+        else
+        {
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
+            GameObject tmpBullet = Instantiate(ammoSO.getBulletPrefab(), gunMuzzle.position, gunMuzzle.rotation);
+        }
+
         SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
         GameObject bullet = Instantiate(bulletPrefab, gunMuzzle.position, gunMuzzle.rotation);
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
