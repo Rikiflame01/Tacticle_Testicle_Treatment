@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace TTT
@@ -15,9 +16,14 @@ namespace TTT
         private TextMeshProUGUI _QuestionTestBox;
         private Button[] _AnswerButtons = new Button[4];
         private TextMeshProUGUI[] _AnswerButtonTexts = new TextMeshProUGUI[4];
+        public Canvas UpgradeCanvas;
+        public Button UpgradeChoice_1;
+        public Button UpgradeChoice_2;
+        private TextMeshProUGUI UpgradeChoice_1_Text;
+        private TextMeshProUGUI UpgradeChoice_2_Text;
         public PlayerData PlayerData;
         public GameDataSO GameData;
-        public int QuestionLevel;
+        public AmmoSO PlayerAmmo;
         private QuizQuestionSO RandomQuestion;
         private GameObject _QuizUIPanel;
         private GameObject _AnswerButtonsPanel;
@@ -28,7 +34,9 @@ namespace TTT
 
         private void Start()
         {
-            PlayerData.Reset();
+            UpgradeChoice_1_Text = UpgradeChoice_1.GetComponentInChildren<TextMeshProUGUI>();
+            UpgradeChoice_2_Text = UpgradeChoice_2.GetComponentInChildren<TextMeshProUGUI>();
+            UpgradeCanvas.enabled = false;
             _QuizUIPanel = GameObject.FindGameObjectWithTag("QuizPanel");
             _AnswerButtonsPanel = GameObject.FindGameObjectWithTag("AnswerButtons");
             _QuestionTestBox = _QuizUIPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -46,8 +54,10 @@ namespace TTT
 
             for (int i = 0; i < 4; i++)
                 _AnswerButtonTexts[i] = _AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            RandomQuestion = GameData.GetRandomQuestionInLevel(QuestionLevel);
+
+            RandomQuestion = GameData.GetRandomQuestionInLevel(PlayerData.GetQuestionLevel());
             _QuestionTestBox.text = RandomQuestion.GetQuestionText();
+
             string[] answers = RandomQuestion.GetAnswerText();
             for (int i = 0; i < 4; i++)
                 _AnswerButtonTexts[i].text = answers[i];
@@ -62,16 +72,61 @@ namespace TTT
             PlayerData.AnswereQuestion(RandomQuestion, index);
             if (RandomQuestion.IsCorrectAnswer(index))
             {
-                //Add code for player buffs
-                print("Correct");
+                UpgradeCanvas.enabled = true;
+                BulletTypeSO choice_1;
+                BulletTypeSO choice_2;
+                if (PlayerAmmo.GetUniqueRandomBulletType(out BulletTypeSO tmpBullet))
+                    choice_1 = tmpBullet;
+                else
+                    choice_1 = null;
+
+                if (PlayerAmmo.GetUniqueRandomBulletType(out BulletTypeSO tmpBullet2))
+                    choice_2 = tmpBullet2;
+                else
+                    choice_2 = null;
+
+                if (choice_1 == null && choice_2 == null)
+                {
+                    SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
+                    SceneManager.UnloadSceneAsync("quiz");
+                }
+
+                if (choice_1 != null)
+                {
+                    UpgradeChoice_1_Text.text = choice_1.getBulletName();
+                    UpgradeChoice_1.interactable = true;
+                    UpgradeChoice_1.onClick.AddListener(() => OnBtnClicked(choice_1));
+                }
+                else
+                {
+                    UpgradeChoice_1_Text.text = "No more upgrades";
+                    UpgradeChoice_1.interactable = false;
+                }
+
+                if (choice_2 != null)
+                {
+                    UpgradeChoice_2_Text.text = choice_2.getBulletName();
+                    UpgradeChoice_2.interactable = true;
+                    UpgradeChoice_2.onClick.AddListener(() => OnBtnClicked(choice_2));
+                }
+                else
+                {
+                    UpgradeChoice_2_Text.text = "No more upgrades";
+                    UpgradeChoice_2.interactable = false;
+                }
             }
             else
-                print("Wrong");
-            /*RandomQuestion = GameData.GetRandomQuestionInLevel(QuestionLevel);
-            _QuestionTestBox.text = RandomQuestion.GetQuestionText();
-            string[] answers = RandomQuestion.GetAnswerText();
-            for (int i = 0; i < 4; i++)
-                _AnswerButtonTexts[i].text = answers[i];*/
+            {
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
+                SceneManager.UnloadSceneAsync("quiz");
+            }
+        }
+
+        private void OnBtnClicked(BulletTypeSO Choice)
+        {
+            PlayerAmmo.AddBulletType(Choice);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
+            SceneManager.UnloadSceneAsync("quiz");
         }
 
         #endregion METHODS
