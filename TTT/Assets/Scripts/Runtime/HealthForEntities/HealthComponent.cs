@@ -6,7 +6,6 @@ public class HealthComponent : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
-
     // UnityEvent that will be invoked when health changes
     public UnityEvent<int> OnHealthChanged;
 
@@ -30,12 +29,17 @@ public class HealthComponent : MonoBehaviour
         }
 
         OnHealthChanged?.Invoke(currentHealth);
-
-
     }
 
     public void TakeDamage(int damage)
     {
+        ShieldComponent shieldComponent = GetComponent<ShieldComponent>();
+        if (shieldComponent != null && shieldComponent.CurrentShield > 0)
+        {
+            shieldComponent.ModifyShield(-damage);
+            return;
+        }
+
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);  // Ensure health stays within bounds
 
@@ -48,7 +52,6 @@ public class HealthComponent : MonoBehaviour
             Die();
         }
     }
-
 
     private void Die()
     {
