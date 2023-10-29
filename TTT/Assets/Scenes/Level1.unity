@@ -2198,11 +2198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
+  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
-  rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
+  rangedEnemyPrefab: {fileID: 785080563472456933, guid: 545d9ff990ce6e440ba591c22cfc7e0c,
     type: 3}
-  specialEnemyPrefab: {fileID: 4970044601898389432, guid: 02e97719ec90f3549917a78b3e222d60,
+  specialEnemyPrefab: {fileID: 785080563472456933, guid: 2a06fccfa2ee0a640aefb385b7f28861,
     type: 3}
 --- !u!1 &644112063
 GameObject:
@@ -2446,11 +2446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
+  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
-  rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
+  rangedEnemyPrefab: {fileID: 785080563472456933, guid: 545d9ff990ce6e440ba591c22cfc7e0c,
     type: 3}
-  specialEnemyPrefab: {fileID: 4970044601898389432, guid: 02e97719ec90f3549917a78b3e222d60,
+  specialEnemyPrefab: {fileID: 785080563472456933, guid: 2a06fccfa2ee0a640aefb385b7f28861,
     type: 3}
 --- !u!1 &677691168
 GameObject:
@@ -3233,11 +3233,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
+  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
-  rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
+  rangedEnemyPrefab: {fileID: 785080563472456933, guid: 545d9ff990ce6e440ba591c22cfc7e0c,
     type: 3}
-  specialEnemyPrefab: {fileID: 4970044601898389432, guid: 02e97719ec90f3549917a78b3e222d60,
+  specialEnemyPrefab: {fileID: 785080563472456933, guid: 2a06fccfa2ee0a640aefb385b7f28861,
     type: 3}
 --- !u!1 &873770476
 GameObject:
@@ -3597,11 +3597,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
+  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
-  rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
+  rangedEnemyPrefab: {fileID: 785080563472456933, guid: 545d9ff990ce6e440ba591c22cfc7e0c,
     type: 3}
-  specialEnemyPrefab: {fileID: 4970044601898389432, guid: 02e97719ec90f3549917a78b3e222d60,
+  specialEnemyPrefab: {fileID: 785080563472456933, guid: 2a06fccfa2ee0a640aefb385b7f28861,
     type: 3}
 --- !u!1 &992198379
 GameObject:
@@ -4647,11 +4647,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
+  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
-  rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
+  rangedEnemyPrefab: {fileID: 785080563472456933, guid: 545d9ff990ce6e440ba591c22cfc7e0c,
     type: 3}
-  specialEnemyPrefab: {fileID: 4970044601898389432, guid: 02e97719ec90f3549917a78b3e222d60,
+  specialEnemyPrefab: {fileID: 785080563472456933, guid: 2a06fccfa2ee0a640aefb385b7f28861,
     type: 3}
 --- !u!1 &1166798979
 GameObject:
@@ -4915,11 +4915,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
+  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
-  rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
+  rangedEnemyPrefab: {fileID: 785080563472456933, guid: 545d9ff990ce6e440ba591c22cfc7e0c,
     type: 3}
-  specialEnemyPrefab: {fileID: 4970044601898389432, guid: 02e97719ec90f3549917a78b3e222d60,
+  specialEnemyPrefab: {fileID: 785080563472456933, guid: 2a06fccfa2ee0a640aefb385b7f28861,
     type: 3}
 --- !u!1 &1273497569
 GameObject:
@@ -5646,11 +5646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
+  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
-  rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
+  rangedEnemyPrefab: {fileID: 785080563472456933, guid: 545d9ff990ce6e440ba591c22cfc7e0c,
     type: 3}
-  specialEnemyPrefab: {fileID: 4970044601898389432, guid: 02e97719ec90f3549917a78b3e222d60,
+  specialEnemyPrefab: {fileID: 785080563472456933, guid: 2a06fccfa2ee0a640aefb385b7f28861,
     type: 3}
 --- !u!1 &1511110919
 GameObject:
