@@ -6,7 +6,7 @@ public class FPS_Shooting : MonoBehaviour
     public AmmoSO ammoSO;
     public Transform gunMuzzle;
     public GameObject bulletPrefab;
-    public float shootingForce = 1000f;
+    public float shootingForce = 5000f;
     private bool isPaused = false;
 
     private void OnEnable()
@@ -39,7 +39,14 @@ public class FPS_Shooting : MonoBehaviour
         {
             SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
             GameObject tmpBullet = Instantiate(ammoSO.getBulletPrefab(), gunMuzzle.position, gunMuzzle.rotation);
+            Rigidbody bulletRb = tmpBullet.GetComponent<Rigidbody>();  // Get the Rigidbody component
+
+            Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
+            bulletRb.AddForce(horizontalDirection * shootingForce);  // Apply force to the bullet
+
+            Destroy(tmpBullet, 5f);  // Optionally, destroy the bullet after 5 seconds
         }
+    
 
         /*SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
         GameObject bullet = Instantiate(bulletPrefab, gunMuzzle.position, gunMuzzle.rotation);
