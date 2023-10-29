@@ -1586,6 +1586,8 @@ MonoBehaviour:
   bossDamage: {fileID: 8300000, guid: 06f4e3897a52c614b9c7e7f6255e231f, type: 3}
   itemPickup: {fileID: 8300000, guid: f0304227573024abb878a0435f77db98, type: 3}
   projectileCollision: {fileID: 8300000, guid: bc5a2b7e1aa854877a8ba7ca3edd06d4, type: 3}
+  shootingRocket: {fileID: 8300000, guid: 7cf8755036e0f5e4abf5608b49238a35, type: 3}
+  shootingExplosive: {fileID: 8300000, guid: 008dc74bd319a134a8576d370c25f633, type: 3}
 --- !u!82 &213507994
 AudioSource:
   m_ObjectHideFlags: 0

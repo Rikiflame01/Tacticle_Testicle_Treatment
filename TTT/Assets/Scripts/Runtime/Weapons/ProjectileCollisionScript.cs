@@ -12,6 +12,7 @@ public class ProjectileCollisionScript : MonoBehaviour
         }
         else
         {
+
             SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision);
         }
 
