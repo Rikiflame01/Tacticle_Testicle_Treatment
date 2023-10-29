@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -19,7 +17,6 @@ public class QuestionAnswerSt
         AnswerText = answerText;
         IsCorrect = isCorrect;
     }
-
 
     public string GetAnswerText() => AnswerText;
 
