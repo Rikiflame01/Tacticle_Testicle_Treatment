@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonClick: {fileID: 8300000, guid: b0e8f1df8bebc4647a3220fbf144b700, type: 3}
   pause: {fileID: 8300000, guid: cc1bb24f01f31074c83ec24987aa88c2, type: 3}
-  shooting: {fileID: 8300000, guid: 1655f6a788f228642be5c4176a9f3213, type: 3}
+  shooting: {fileID: 8300000, guid: 7cf8755036e0f5e4abf5608b49238a35, type: 3}
   bossDamage: {fileID: 8300000, guid: 06f4e3897a52c614b9c7e7f6255e231f, type: 3}
   itemPickup: {fileID: 8300000, guid: f0304227573024abb878a0435f77db98, type: 3}
   projectileCollision: {fileID: 8300000, guid: bc5a2b7e1aa854877a8ba7ca3edd06d4, type: 3}
@@ -3924,13 +3924,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7d85a3e137c1943bfafc0edaacf0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuMusic: {fileID: 8300000, guid: dc54f24cdfda4cf4b86219ff89843662, type: 3}
-  gameSceneMusic: {fileID: 8300000, guid: 79eeb125a295a1147a39c02cfd54cbcd, type: 3}
-  bossMusic: {fileID: 8300000, guid: 90317c8d881f3014280977fd0c19b1a9, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: 7daa30671d6b9074baebadbe6805859a, type: 3}
+  gameSceneMusic: {fileID: 8300000, guid: 79194ec90c56b5f4b82e75904e051f6f, type: 3}
+  bossMusic: {fileID: 8300000, guid: d2751dd3b22ea2548aecc7ef09fc513f, type: 3}
   deathMusic: {fileID: 8300000, guid: 4d9fc731041b063499d51b2325e688df, type: 3}
   victoryMusic: {fileID: 8300000, guid: 26ca2f6631b602342858900a7d9aa854, type: 3}
   organLevelsMusic:
-  - {fileID: 8300000, guid: 95bbf7d0c33214f49957d54fca63d61d, type: 3}
+  - {fileID: 8300000, guid: 79194ec90c56b5f4b82e75904e051f6f, type: 3}
 --- !u!1 &990920365
 GameObject:
   m_ObjectHideFlags: 0
