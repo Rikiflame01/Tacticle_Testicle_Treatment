@@ -2393,7 +2393,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1752.1123, y: 1371.3334, z: 2091.475}
-  m_LocalScale: {x: 2.7943962, y: 2.7943962, z: 2.7943962}
+  m_LocalScale: {x: 6.4884844, y: 6.4884844, z: 6.4884844}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 785080563472089383}
@@ -2435,7 +2435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c8122783a17554d9e6f1eeadafbd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 30
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2516,8 +2516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89046fc4ecee0a4ab8fc6e1f07f4123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 20
-  attackDamage: 10
+  attackRange: 40
+  attackDamage: 20
   attackCooldown: 1.5
   knockbackForce: 0
 --- !u!195 &-4318215399455633833
@@ -2530,10 +2530,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 10
+  m_Acceleration: 50
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 200
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -2557,8 +2557,8 @@ MonoBehaviour:
   sightRange: 150
   chaseDuration: 5
   patrolPoints: []
-  patrolSpeed: 6
-  chaseSpeed: 20
+  patrolSpeed: 15
+  chaseSpeed: 40
   isChasing: 0
 --- !u!1 &785080563472456935
 GameObject:
