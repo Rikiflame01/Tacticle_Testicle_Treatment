@@ -34,7 +34,7 @@ namespace TTT
 
         private void Start()
         {
-            PlayerData.Reset();
+            //PlayerData.Reset();
             UpgradeChoice_1_Text = UpgradeChoice_1.GetComponentInChildren<TextMeshProUGUI>();
             UpgradeChoice_2_Text = UpgradeChoice_2.GetComponentInChildren<TextMeshProUGUI>();
             UpgradeCanvas.enabled = false;
@@ -53,8 +53,6 @@ namespace TTT
             _QuizUIPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(_QuizUIPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x * 0.99f, tmpScreenHeight * 0.99f);
             _AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(_AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta.x, tmpScreenHeight * 0.4f);*/
 
-            for (int i = 0; i < 4; i++)
-                _AnswerButtonTexts[i] = _AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
             RandomQuestion = GameData.GetRandomQuestionInLevel(PlayerData.GetQuestionLevel());
             _QuestionTestBox.text = RandomQuestion.GetQuestionText();
             string[] answers = RandomQuestion.GetAnswerText();
@@ -69,9 +67,11 @@ namespace TTT
         public void AnswerButtonClicked(int index)
         {
             PlayerData.AnswereQuestion(RandomQuestion, index);
+
             if (RandomQuestion.IsCorrectAnswer(index))
             {
                 UpgradeCanvas.enabled = true;
+                _QuizUIPanel.SetActive(false);
                 BulletTypeSO choice_1;
                 BulletTypeSO choice_2;
                 if (PlayerAmmo.GetUniqueRandomBulletType(out BulletTypeSO tmpBullet))
