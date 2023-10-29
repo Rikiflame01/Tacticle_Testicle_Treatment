@@ -6,6 +6,7 @@ public class UIPlayerDeath : MonoBehaviour
 
     public void ShowDeathScreen()
     {
+        SFXManager.Instance.PlaySFX(SFXManager.Instance.playerDeath, 4f);
         deathScreenPanel.SetActive(true);
 
         // Unlock the cursor

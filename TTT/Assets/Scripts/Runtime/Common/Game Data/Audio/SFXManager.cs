@@ -7,6 +7,10 @@ public class SFXManager : MonoBehaviour
 
     public AudioClip buttonClick;
     public AudioClip pause;
+    public AudioClip playerDamageReceived;
+    public AudioClip playerDeath;
+    public AudioClip enemyGrunt;
+    //public AudioClip playerFootstep;
     public AudioClip shooting;
     public AudioClip bossDamage;
     public AudioClip itemPickup;
@@ -33,8 +37,8 @@ public class SFXManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, float volume = 1.0f)
     {
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(clip, volume);
     }
 }

@@ -19,7 +19,7 @@ public abstract class Pickup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Picked up by player!");
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.itemPickup, 3);
             Player player = collision.gameObject.GetComponent<Player>();
             OnPickup(player);
             Destroy(gameObject);

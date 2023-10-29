@@ -8,12 +8,25 @@ public class ProjectileCollisionScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boss"))
         {
-            SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage);
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage, 3);
+        }
+        if (collision.gameObject.CompareTag("MeleeEnemy"))
+        {
+
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+        }
+        if (collision.gameObject.CompareTag("RangedEnemy"))
+        {
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+        }
+        if (collision.gameObject.CompareTag("SpecialEnemy"))
+        {
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
         }
         else
         {
 
-            SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision);
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision, 2);
         }
 
         HealthComponent enemyHealth = collision.gameObject.GetComponent<HealthComponent>();

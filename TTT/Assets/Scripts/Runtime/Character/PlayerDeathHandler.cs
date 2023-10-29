@@ -39,6 +39,7 @@ public class PlayerDeathHandler : MonoBehaviour
 
     private void HandlePlayerDeath()
     {
+        SFXManager.Instance.PlaySFX(SFXManager.Instance.playerDeath);
         OnPlayerDied?.Invoke();
     }
 }

@@ -1582,9 +1582,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonClick: {fileID: 8300000, guid: b0e8f1df8bebc4647a3220fbf144b700, type: 3}
   pause: {fileID: 8300000, guid: cc1bb24f01f31074c83ec24987aa88c2, type: 3}
+  playerDamageReceived: {fileID: 8300000, guid: f9f0d344d566ab7409b16cd4b7f90ba4,
+    type: 3}
+  playerDeath: {fileID: 8300000, guid: f511555ab88e9b541b929ae1265dc0d1, type: 3}
+  enemyGrunt: {fileID: 8300000, guid: 4639808cf679d5d4eab73709445e98ae, type: 3}
   shooting: {fileID: 8300000, guid: 7cf8755036e0f5e4abf5608b49238a35, type: 3}
   bossDamage: {fileID: 8300000, guid: 06f4e3897a52c614b9c7e7f6255e231f, type: 3}
-  itemPickup: {fileID: 8300000, guid: f0304227573024abb878a0435f77db98, type: 3}
+  itemPickup: {fileID: 8300000, guid: 21ba4f1a293a2487587068d7bbe15106, type: 3}
   projectileCollision: {fileID: 8300000, guid: bc5a2b7e1aa854877a8ba7ca3edd06d4, type: 3}
   shootingRocket: {fileID: 8300000, guid: 7cf8755036e0f5e4abf5608b49238a35, type: 3}
   shootingExplosive: {fileID: 8300000, guid: 008dc74bd319a134a8576d370c25f633, type: 3}

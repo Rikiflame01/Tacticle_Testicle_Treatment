@@ -57,6 +57,8 @@ public class EnemyMeleeAttack : MonoBehaviour
         enemyController.ChangeState(nextAttackIsLeft ? EnemyState.AttackingL : EnemyState.AttackingR);
         nextAttackIsLeft = !nextAttackIsLeft;
 
+        SFXManager.Instance.PlaySFX(SFXManager.Instance.playerDamageReceived);
+
         // Damage the player
         if (playerHealth)
         {
