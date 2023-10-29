@@ -39,6 +39,27 @@ public class FPS_Shooting : MonoBehaviour
         {
             SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
             GameObject tmpBullet = Instantiate(ammoSO.getBulletPrefab(), gunMuzzle.position, gunMuzzle.rotation);
+            //try
+            //{
+            //    tmpBullet.GetComponent<StandardBulletBehaviour>();
+            //    SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
+            //}
+            //catch (System.Exception e)
+            //{
+
+            //    try
+            //    {
+            //        tmpBullet.GetComponent<ExplosiveBullet_BulletBehaviour>();
+            //        SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingRocket);
+            //    }
+            //    catch (System.Exception f)
+            //    {
+
+            //        tmpBullet.GetComponent<Rocket_BulletBehaviour>();
+            //        SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
+            //    }
+            //}
+
             Rigidbody bulletRb = tmpBullet.GetComponent<Rigidbody>();  // Get the Rigidbody component
 
             Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
