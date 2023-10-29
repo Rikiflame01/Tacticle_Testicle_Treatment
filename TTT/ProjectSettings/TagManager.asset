@@ -13,14 +13,17 @@ TagManager:
   - Answer_Button_4
   - QuizPanel
   - Question_Text
+  - MeleeEnemy
+  - RangedEnemy
+  - SpecialEnemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemies
   - Water
   - UI
-  - 
+  - MinimapIcon
   - 
   - 
   - 
