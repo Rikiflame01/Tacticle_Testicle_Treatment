@@ -16,7 +16,7 @@ namespace TTT
         private int volVal;
         private float volValCalc;
 
-       
+        
         public void setVol(float sliderVal)
         {
             mixer.SetFloat("MusicVolume", Mathf.Log10(sliderVal) * 20);
