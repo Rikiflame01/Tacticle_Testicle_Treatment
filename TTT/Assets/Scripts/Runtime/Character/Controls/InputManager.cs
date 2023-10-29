@@ -20,7 +20,8 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        movement.ReceiveInput(horizontalInput);
+        Vector2 adjustedInput = new Vector2(horizontalInput.x * 0.5f, horizontalInput.y); // Halving the left/right strafe speed
+        movement.ReceiveInput(adjustedInput);
         mouseLook.ReceiveInput(mouseInput);
     }
 

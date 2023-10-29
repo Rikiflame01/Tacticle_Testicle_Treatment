@@ -293,8 +293,8 @@ Transform:
   m_GameObject: {fileID: 79420690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -69, y: -26, z: 262}
-  m_LocalScale: {x: 117.19729, y: 117.19729, z: 117.19729}
+  m_LocalPosition: {x: -67, y: -26, z: 229}
+  m_LocalScale: {x: 177.18192, y: 177.18192, z: 177.18192}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 218486478}
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1078248144}
-  sensitivityX: 30
+  sensitivityX: 15
 --- !u!114 &218486481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 218486482}
-  speed: 200
+  speed: 50
   gravity: -30
 --- !u!114 &218486484
 MonoBehaviour:
@@ -1730,6 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef87fa6ff5a246468df2c0875ec1943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammoSO: {fileID: 0}
   gunMuzzle: {fileID: 1137168238}
   bulletPrefab: {fileID: 5733790791273234246, guid: e88ef833472d94a47b8bd4fcbe20306d,
     type: 3}
