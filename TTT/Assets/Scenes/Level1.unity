@@ -2198,7 +2198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 5954ff2e42836cd499bc562846339f34,
+  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
   rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
     type: 3}
@@ -2446,7 +2446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 5954ff2e42836cd499bc562846339f34,
+  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
   rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
     type: 3}
@@ -3233,7 +3233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 5954ff2e42836cd499bc562846339f34,
+  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
   rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
     type: 3}
@@ -3597,7 +3597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 5954ff2e42836cd499bc562846339f34,
+  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
   rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
     type: 3}
@@ -4647,7 +4647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 5954ff2e42836cd499bc562846339f34,
+  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
   rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
     type: 3}
@@ -4915,7 +4915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 5954ff2e42836cd499bc562846339f34,
+  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
   rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
     type: 3}
@@ -5646,7 +5646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ff011b8168e94b9680cf12a198249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemyPrefab: {fileID: 4970044601898389432, guid: 5954ff2e42836cd499bc562846339f34,
+  meleeEnemyPrefab: {fileID: 785080563472456933, guid: 7ff62efb6e6cb34409e4535f2079221a,
     type: 3}
   rangedEnemyPrefab: {fileID: 4970044601898389432, guid: 93065bd335b5c684f8ca76f62d78ed04,
     type: 3}
@@ -6119,7 +6119,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b8ae2b074717f4f4fad8e769e4b82546,
         type: 3}
       propertyPath: m_Name
-      value: Map
+      value: mazemanTextured1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b8ae2b074717f4f4fad8e769e4b82546,
         type: 3}
