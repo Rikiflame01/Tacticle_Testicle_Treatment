@@ -21,7 +21,7 @@ namespace TTT
         {
             if (other.CompareTag("Player"))
             {
-                SceneManager.LoadSceneAsync("quiz", LoadSceneMode.Additive);
+                SceneManager.LoadSceneAsync("Quiz", LoadSceneMode.Additive);
                 StartCoroutine(FadeInText());
             }
         }
@@ -42,7 +42,7 @@ namespace TTT
         {
             if (other.CompareTag("Player"))
             {
-                SceneManager.UnloadSceneAsync("quiz");
+                SceneManager.UnloadSceneAsync("Quiz");
                 StartCoroutine(FadeOutText());
             }
         }
@@ -50,7 +50,7 @@ namespace TTT
         public void StartQuiz()
         {
             pauseMenu.Pause();
-            SceneManager.LoadScene("quiz", LoadSceneMode.Additive);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Quiz"));
         }
 
         public IEnumerator FadeInText()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using static EnemyController;
 
 [RequireComponent(typeof(EnemyController))]
 public class EnemyMeleeAttack : MonoBehaviour
@@ -14,6 +15,7 @@ public class EnemyMeleeAttack : MonoBehaviour
     private Rigidbody playerRigidbody;
     private float timeSinceLastAttack = 0f;
     private EnemyController enemyController;
+    private bool nextAttackIsLeft = true;
 
     private void Start()
     {
@@ -32,7 +34,7 @@ public class EnemyMeleeAttack : MonoBehaviour
     {
         timeSinceLastAttack += Time.deltaTime;
 
-        if (enemyController.isChasing && CanAttackPlayer())
+        if (enemyController.CurrentState == EnemyState.Chasing && CanAttackPlayer())
         {
             AttackPlayer();
             timeSinceLastAttack = 0f;
@@ -45,13 +47,16 @@ public class EnemyMeleeAttack : MonoBehaviour
 
         bool isInRange = Vector3.Distance(transform.position, player.position) <= attackRange;
         bool canAttack = timeSinceLastAttack >= attackCooldown;
-        bool hasLineOfSight = !Physics.Linecast(transform.position, player.position, LayerMask.GetMask("Default")); // Assuming obstacles are in the "Default" layer.
+        bool hasLineOfSight = !Physics.Linecast(transform.position, player.position, LayerMask.GetMask("Default"));
 
         return isInRange && canAttack && hasLineOfSight;
     }
 
     private void AttackPlayer()
     {
+        enemyController.ChangeState(nextAttackIsLeft ? EnemyState.AttackingL : EnemyState.AttackingR);
+        nextAttackIsLeft = !nextAttackIsLeft;
+
         // Damage the player
         if (playerHealth)
         {

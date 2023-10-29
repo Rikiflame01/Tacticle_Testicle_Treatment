@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class CameraCollision : MonoBehaviour
 {
-
     [SerializeField]
-    public Transform playerTransform; 
-    public float cameraDistance = 5.0f; 
+    public Transform playerTransform;
+
+    public float cameraDistance = 5.0f;
     public float raycastOffset = 0.5f;
-    public float minimumDistance = 1.0f; 
+    public float minimumDistance = 1.0f;
 
     private void Update()
     {
         HandleCameraCollision();
     }
 
-    void HandleCameraCollision()
+    private void HandleCameraCollision()
     {
         Vector3 dirFromPlayerToCamera = transform.position - playerTransform.position;
         dirFromPlayerToCamera.Normalize();

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace TTT
 {
@@ -34,6 +34,7 @@ namespace TTT
 
         private void Start()
         {
+            //PlayerData.Reset();
             UpgradeChoice_1_Text = UpgradeChoice_1.GetComponentInChildren<TextMeshProUGUI>();
             UpgradeChoice_2_Text = UpgradeChoice_2.GetComponentInChildren<TextMeshProUGUI>();
             UpgradeCanvas.enabled = false;
@@ -52,12 +53,8 @@ namespace TTT
             _QuizUIPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(_QuizUIPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x * 0.99f, tmpScreenHeight * 0.99f);
             _AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(_AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta.x, tmpScreenHeight * 0.4f);*/
 
-            for (int i = 0; i < 4; i++)
-                _AnswerButtonTexts[i] = _AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-
             RandomQuestion = GameData.GetRandomQuestionInLevel(PlayerData.GetQuestionLevel());
             _QuestionTestBox.text = RandomQuestion.GetQuestionText();
-
             string[] answers = RandomQuestion.GetAnswerText();
             for (int i = 0; i < 4; i++)
                 _AnswerButtonTexts[i].text = answers[i];
@@ -70,9 +67,11 @@ namespace TTT
         public void AnswerButtonClicked(int index)
         {
             PlayerData.AnswereQuestion(RandomQuestion, index);
+
             if (RandomQuestion.IsCorrectAnswer(index))
             {
                 UpgradeCanvas.enabled = true;
+                _QuizUIPanel.SetActive(false);
                 BulletTypeSO choice_1;
                 BulletTypeSO choice_2;
                 if (PlayerAmmo.GetUniqueRandomBulletType(out BulletTypeSO tmpBullet))
@@ -117,7 +116,7 @@ namespace TTT
             }
             else
             {
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
                 SceneManager.UnloadSceneAsync("quiz");
             }
         }
@@ -125,8 +124,8 @@ namespace TTT
         private void OnBtnClicked(BulletTypeSO Choice)
         {
             PlayerAmmo.AddBulletType(Choice);
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
-            SceneManager.UnloadSceneAsync("quiz");
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
+            SceneManager.UnloadSceneAsync("Quiz");
         }
 
         #endregion METHODS

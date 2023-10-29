@@ -13,6 +13,8 @@ public class ShieldComponent : MonoBehaviour
 
     private ShieldBarUI shieldBarUI;
 
+    public int CurrentShield => currentShield;
+
     private void Awake()
     {
         currentShield = maxShield;
@@ -31,7 +33,7 @@ public class ShieldComponent : MonoBehaviour
     public void ModifyShield(int amount)
     {
         currentShield += amount;
-        currentShield = Mathf.Clamp(currentShield, 0, maxShield); 
+        currentShield = Mathf.Clamp(currentShield, 0, maxShield);
 
         OnShieldChanged?.Invoke(currentShield);
     }

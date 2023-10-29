@@ -14,9 +14,19 @@ public class EnemyController : MonoBehaviour
     private Transform eyeOrigin;
     private Transform playerTransform;
     private NavMeshAgent agent;
-    public bool isChasing = false;
+    public EnemyState CurrentState { get; private set; } = EnemyState.Walking;
     private float timeOutOfSight = 0f;
     private int currentPatrolIndex = 0;
+
+    public enum EnemyState
+    {
+        Walking,
+        Chasing,
+        AttackingL,
+        AttackingR,
+        Walking1,
+        Walking2
+    }
 
     private void Awake()
     {
@@ -32,24 +42,21 @@ public class EnemyController : MonoBehaviour
 
         if (canSeePlayer)
         {
-            timeOutOfSight = 0f; // Reset the timer if the player is in sight
-            if (!isChasing)
-            {
-                StartChasing();
-            }
+            timeOutOfSight = 0f;
+            ChangeState(EnemyState.Chasing);
         }
-        else if (isChasing)
+        else if (CurrentState == EnemyState.Chasing)
         {
             timeOutOfSight += Time.deltaTime;
             if (timeOutOfSight >= chaseDuration)
             {
-                StopChasing();
+                ChangeState(EnemyState.Walking);
             }
         }
 
-        if (isChasing)
+        if (CurrentState == EnemyState.Chasing)
         {
-            agent.SetDestination(playerTransform.position); // Continuously update the destination to the player's position
+            agent.SetDestination(playerTransform.position);
         }
         else
         {
@@ -57,19 +64,15 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void StartChasing()
+    public void ChangeState(EnemyState newState)
     {
-        Debug.Log(gameObject.name + " started chasing the player.");
-        agent.speed = chaseSpeed;
-        isChasing = true;
-    }
+        CurrentState = newState;
+        agent.speed = (CurrentState == EnemyState.Chasing) ? chaseSpeed : patrolSpeed;
 
-    private void StopChasing()
-    {
-        Debug.Log(gameObject.name + " stopped chasing and returned to patrol.");
-        agent.speed = patrolSpeed;
-        isChasing = false;
-        Patrol();
+        if (CurrentState != EnemyState.Chasing && CurrentState != EnemyState.AttackingL && CurrentState != EnemyState.AttackingR)
+        {
+            CurrentState = EnemyState.Walking;  // Ensure Walking state when not chasing or attacking
+        }
     }
 
     private void Patrol()

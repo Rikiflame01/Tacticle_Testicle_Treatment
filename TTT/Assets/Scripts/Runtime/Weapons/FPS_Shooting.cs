@@ -1,5 +1,5 @@
-using TTT;
 using UnityEngine;
+using TTT;
 
 public class FPS_Shooting : MonoBehaviour
 {
@@ -41,14 +41,14 @@ public class FPS_Shooting : MonoBehaviour
             GameObject tmpBullet = Instantiate(ammoSO.getBulletPrefab(), gunMuzzle.position, gunMuzzle.rotation);
         }
 
-        SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
+        /*SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
         GameObject bullet = Instantiate(bulletPrefab, gunMuzzle.position, gunMuzzle.rotation);
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
 
         Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
         bulletRb.AddForce(horizontalDirection * shootingForce);
 
-        Destroy(bullet, 5f);
+        Destroy(bullet, 5f);*/
     }
 
     private void Pause()

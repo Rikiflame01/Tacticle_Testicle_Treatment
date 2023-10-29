@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6857350158287990046}
   - component: {fileID: 4498181163273830862}
-  - component: {fileID: 908638017524407595}
+  - component: {fileID: 6405403366069303690}
   m_Layer: 0
   m_Name: QuizStart
   m_TagString: Untagged
@@ -191,7 +191,7 @@ CapsuleCollider:
   m_Height: 50
   m_Direction: 1
   m_Center: {x: 0, y: 15, z: 0}
---- !u!114 &908638017524407595
+--- !u!114 &6405403366069303690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,13 +200,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 123837862548915665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec18f0cce59a8d341acb2ca07401b923, type: 3}
+  m_Script: {fileID: 11500000, guid: 67a7177aecee7e04281f348fde65b3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QuestionLevel: 0
   canvas: {fileID: 4637218747185758920}
-  quizScene:
-    m_Handle: 0
   text: {fileID: 7720249334767010360}
+  PlayerData: {fileID: 11400000, guid: ce88cf2f85e304a409079ef059be39e7, type: 2}
 --- !u!1 &8496733379374933110
 GameObject:
   m_ObjectHideFlags: 0

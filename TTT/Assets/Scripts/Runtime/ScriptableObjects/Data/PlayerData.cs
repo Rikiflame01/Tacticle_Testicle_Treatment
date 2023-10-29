@@ -1,5 +1,6 @@
 using Common.PlayerData;
 using System;
+using TTT;
 using TTT.Common.PlayerData;
 using UnityEngine;
 
@@ -8,47 +9,50 @@ public class PlayerData : ScriptableObject
 {
     #region FIELDS
 
-    public Health health;
+    //public Health health;
     public PlayerQuizResultsSt playerResults;
+
+    public AmmoSO PlayerAmmo;
     private int _QuestionLevel;
 
     #endregion FIELDS
 
     #region METHODS
 
-    //reset all player data
     public void Reset()
     {
-        ResetHealth();
+        //ResetHealth();
         ResetResults();
+        ResetAmmoSO();
     }
 
-    #region HEALTH
+    /*    #region HEALTH
 
-    [Tooltip("Resets Health To 0")]
-    public void ResetHealth() => health.Reset();
+        [Tooltip("Resets Health To 0")]
+        public void ResetHealth() => health.Reset();
 
-    [Tooltip("Takes Damage of value 'Damage'")]
-    public void TakeDamage(int Damage) => health.TakeDamage(Damage);
+        [Tooltip("Takes Damage of value 'Damage'")]
+        public void TakeDamage(int Damage) => health.TakeDamage(Damage);
 
-    [Tooltip("Heals Player With Value 'heal'")]
-    public void Heal(int Heal) => health.Heal(Heal);
+        [Tooltip("Heals Player With Value 'heal'")]
+        public void Heal(int Heal) => health.Heal(Heal);
 
-    [Tooltip("Returns Current Health")]
-    public int GetHealth() => health.GetHealth();
+        [Tooltip("Returns Current Health")]
+        public int GetHealth() => health.GetHealth();
 
-    [Tooltip("Returns if Player is Dead")]
-    public bool GetIsDead() => health.GetIsDead();
+        [Tooltip("Returns if Player is Dead")]
+        public bool GetIsDead() => health.GetIsDead();
 
-    [Tooltip("Sets Max Health")]
-    public void SetMaxHealth(int max) => health.setMaxHealth(max);
+        [Tooltip("Sets Max Health")]
+        public void SetMaxHealth(int max) => health.setMaxHealth(max);
 
-    [Tooltip("Kills Player")]
-    public void Kill() => health.kill();
+        [Tooltip("Kills Player")]
+        public void Kill() => health.kill();
 
-    #endregion HEALTH
+        #endregion METHODS
+    */
 
-    #region QUIZ
+    #region QUIZRESULTS
 
     [Tooltip("Resets Quiz Results")]
     public void ResetResults() => playerResults.resetQuizResults();
@@ -65,7 +69,17 @@ public class PlayerData : ScriptableObject
     [Tooltip("Returns the Question Level For the current Question")]
     public int GetQuestionLevel() => _QuestionLevel;
 
-    #endregion QUIZ
+    #endregion QUIZRESULTS
+
+    #region AMMO
+
+    public void ResetAmmoSO()
+    {
+        PlayerAmmo.resetBulletTypes();
+        PlayerAmmo.resetAmmo();
+    }
+
+    #endregion AMMO
 
     #endregion METHODS
 }

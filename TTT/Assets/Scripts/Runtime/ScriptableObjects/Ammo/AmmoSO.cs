@@ -21,7 +21,8 @@ namespace TTT
         {
             foreach (BulletTypeSO bulletType in CurrentBulletTypes)
             {
-                bulletType.Initialize();
+                if (bulletType)
+                    bulletType.Initialize();
             }
         }
 
@@ -66,8 +67,18 @@ namespace TTT
         {
             foreach (BulletTypeSO bulletType in CurrentBulletTypes)
             {
-                bulletType.setCurrentAmmo(bulletType.getMaxAmmo());
+                if (bulletType)
+                    bulletType.setCurrentAmmo(bulletType.getMaxAmmo());
             }
+        }
+
+        public void resetBulletTypes()
+        {
+            BulletTypeSO[] AllTypesTmp = AllBulletsTypes;
+            CurrentBulletTypes = new BulletTypeSO[1];
+            AllBulletsTypes = AllTypesTmp;
+            CurrentBulletTypes[0] = AllTypesTmp[0];
+            Initialize();
         }
 
         public void AddRandomBulletType()
