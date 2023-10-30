@@ -22,4 +22,8 @@ MonoBehaviour:
   CurrentBulletTypes:
   - {fileID: 11400000, guid: 4db6b61ce56cccb47b5d5e216c62ba28, type: 2}
   - {fileID: 11400000, guid: b702dd83d5ef25b42956428a14623d23, type: 2}
+  - {fileID: 11400000, guid: ce3270f9d7ca1d240b7de0195ffa79a0, type: 2}
+  - {fileID: 11400000, guid: c004af0dddeb7634d991f16d3427afcc, type: 2}
+  - {fileID: 11400000, guid: e2fc83f11983f564b99660d4120091fd, type: 2}
+  - {fileID: 11400000, guid: 12ede093c5b36b24ba33d524ee3110c2, type: 2}
   currentBulletTypeIndex: 0

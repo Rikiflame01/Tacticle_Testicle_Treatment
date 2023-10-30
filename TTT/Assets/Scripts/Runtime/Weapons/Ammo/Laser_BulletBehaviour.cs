@@ -26,7 +26,7 @@ namespace TTT
         {
             gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
             horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
-            SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting, 1);
+            //SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting, 1);
             _Beam = GetComponent<LineRenderer>();
             _Beam.useWorldSpace = true;
             _Beam.enabled = true;
@@ -43,6 +43,7 @@ namespace TTT
 
         private IEnumerator Laz()
         {
+            StartCoroutine(BeamDurationTimer());
             RaycastHit hit;
             if (Physics.Raycast(transform.position, horizontalDirection, out hit, BeamMaxLen))
             {
@@ -76,8 +77,8 @@ namespace TTT
             {
                 _Beam.SetPosition(1, transform.position + (horizontalDirection * BeamMaxLen));
             }
-            yield return null;
             StartCoroutine(BeamDurationTimer());
+            yield return null;
         }
 
         private IEnumerator FadeOutBeam()

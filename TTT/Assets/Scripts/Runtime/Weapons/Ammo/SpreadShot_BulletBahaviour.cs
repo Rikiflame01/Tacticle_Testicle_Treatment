@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TTT
@@ -9,10 +10,10 @@ namespace TTT
         #region FIELDS
 
         public float BulletLifeTime = 5f;
-        public int NumberOfBullets = 5;
-        public float spreadAngle = 30f;
+        public int NumberOfBullets = 8;
+        public float spreadAngle = 45f;
         public float spreadAngleIncrement;
-        private GameObject bulletPrefab;
+        public GameObject bulletPrefab;
 
         #endregion FIELDS
 
@@ -20,8 +21,8 @@ namespace TTT
 
         private void Awake()
         {
-            //SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
-            SpawnChostCones();
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
+            SpawnCones();
 
             Destroy(this, BulletLifeTime);
         }
@@ -30,7 +31,7 @@ namespace TTT
 
         #region METHODS
 
-        private void SpawnChostCones()
+        private void SpawnCones()
         {
             float angle = -spreadAngle / 2;
             float angleIncrement = spreadAngle / NumberOfBullets;
@@ -38,8 +39,26 @@ namespace TTT
             for (int i = 0; i < NumberOfBullets; i++)
             {
                 float currentAngle = angle + (i * angleIncrement);
-                Quaternion rotation = Quaternion.Euler(0, currentAngle, 0);
-                GameObject bullet = Instantiate(bulletPrefab, this.transform.position, rotation);
+                //Quaternion rotation = Quaternion.Euler(0, currentAngle, 0);
+                GameObject bullet = Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
+                int random = Random.Range(0, 2);
+                float randomAngle = Random.Range(0, spreadAngle);
+                Quaternion rotation = Quaternion.Euler(0, 0, 0);
+                switch (random)
+                {
+                    case 0:
+                        rotation = Quaternion.Euler(randomAngle, currentAngle, 0);
+                        break;
+
+                    case 1:
+                        rotation = Quaternion.Euler(currentAngle, randomAngle, 0);
+                        break;
+
+                    case 2:
+                        rotation = Quaternion.Euler(currentAngle, currentAngle, 0);
+                        break;
+                }
+                bullet.GetComponent<Rigidbody>().AddForce(rotation * bullet.transform.forward * 5000f);
             }
         }
 

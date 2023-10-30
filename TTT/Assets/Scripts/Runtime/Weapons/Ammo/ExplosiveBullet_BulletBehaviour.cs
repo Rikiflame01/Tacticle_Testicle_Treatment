@@ -22,17 +22,19 @@ namespace TTT
         private void Awake()
         {
             gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
-            SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive, 1);
+            //SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive, 1);
             Rigidbody bulletRb = this.GetComponent<Rigidbody>();
 
             Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
-            bulletRb.AddForce(horizontalDirection * shootingForce);
+            bulletRb.AddForce(horizontalDirection * shootingForce * 10f);
 
             Destroy(this, BulletLifeTime);
         }
 
         private void OnCollisionEnter(Collision collision)
         {
+            Explode();
+            Destroy(this);
             if (collision.gameObject.CompareTag("Boss"))
             {
                 SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage, 3);
@@ -82,7 +84,7 @@ namespace TTT
             // Instantiate the explosion effect
             Instantiate(explosionEffect, transform.position, transform.rotation);
             // Destroy the bullet
-            Destroy(this);
+            //Destroy(this);
         }
 
         #endregion METHODS

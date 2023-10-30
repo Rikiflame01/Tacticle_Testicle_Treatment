@@ -23,11 +23,11 @@ namespace TTT
 
         private void Awake()
         {
+            _bulletRb = this.GetComponent<Rigidbody>();
             gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
             SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive, 1);
-            Rigidbody bulletRb = this.GetComponent<Rigidbody>();
             Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
-            bulletRb.AddForce(horizontalDirection * shootingForce);
+            _bulletRb.AddForce(horizontalDirection * shootingForce * 10f);
 
             Destroy(this, BulletLifeTime);
         }
@@ -36,10 +36,10 @@ namespace TTT
         {
             lastVel = _bulletRb.velocity;
 
-            if (_bulletRb.velocity.magnitude < 1f)
+            /*if (_bulletRb.velocity.magnitude < 1f)
             {
                 Destroy(this.gameObject);
-            }
+            }*/
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -47,8 +47,8 @@ namespace TTT
             if (currBounces >= NumberOfBounces)
                 return;
             currSpeed = lastVel.magnitude;
-            Vector3 reflect = Vector3.Reflect(lastVel.normalized, collision.contacts[0].normal);
-            _bulletRb.velocity = reflect * currSpeed;
+            Vector3 reflect = Vector3.Reflect(_bulletRb.velocity.normalized, collision.contacts[0].normal);
+            _bulletRb.AddForce(reflect * currSpeed);
             currBounces++;
         }
 

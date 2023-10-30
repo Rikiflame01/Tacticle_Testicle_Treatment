@@ -34,7 +34,8 @@ public class ProjectileCollisionScript : MonoBehaviour
             enemyHealth.TakeDamage(damageAmount);
 
             // Destroy the projectile after it hits the enemy
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }

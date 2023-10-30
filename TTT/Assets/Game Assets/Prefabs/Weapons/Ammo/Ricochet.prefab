@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingForce: 1000
+  BulletLifeTime: 5
   NumberOfBounces: 4
 --- !u!114 &9144225225495554226
 MonoBehaviour:
