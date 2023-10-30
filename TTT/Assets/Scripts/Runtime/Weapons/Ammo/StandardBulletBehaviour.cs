@@ -9,6 +9,8 @@ namespace TTT
         #region FIELDS
 
         public float shootingForce = 1000f;
+        public float BulletLifeTime = 5f;
+        private Transform gunMuzzle;
 
         #endregion FIELDS
 
@@ -16,13 +18,14 @@ namespace TTT
 
         private void Awake()
         {
+            gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
             SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
             Rigidbody bulletRb = this.GetComponent<Rigidbody>();
 
-            Vector3 horizontalDirection = this.transform.forward.normalized;
+            Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
             bulletRb.AddForce(horizontalDirection * shootingForce);
 
-            Destroy(this, 5f);
+            Destroy(this, BulletLifeTime);
         }
 
         #endregion UNITY METHODS

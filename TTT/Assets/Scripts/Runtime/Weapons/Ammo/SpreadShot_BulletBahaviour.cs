@@ -8,10 +8,11 @@ namespace TTT
     {
         #region FIELDS
 
+        public float BulletLifeTime = 5f;
         public int NumberOfBullets = 5;
         public float spreadAngle = 30f;
         public float spreadAngleIncrement;
-        public GameObject bulletPrefab;
+        private GameObject bulletPrefab;
 
         #endregion FIELDS
 
@@ -22,7 +23,7 @@ namespace TTT
             //SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
             SpawnChostCones();
 
-            Destroy(this, 5f);
+            Destroy(this, BulletLifeTime);
         }
 
         #endregion UNITY METHODS

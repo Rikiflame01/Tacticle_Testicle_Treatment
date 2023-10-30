@@ -8,6 +8,7 @@ namespace TTT
     {
         #region FIELDS
 
+        private Transform gunMuzzle;
         public float explosionRadius = 5f;
         public int ExplosionDamage = 35;
         public GameObject explosionEffect;
@@ -22,10 +23,11 @@ namespace TTT
 
         private void Awake()
         {
+            gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
             SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingRocket);
             _bulletRb = this.GetComponent<Rigidbody>();
 
-            horizontalDirection = this.transform.forward.normalized;
+            horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
 
             Destroy(this, BulletLifeTime);
         }

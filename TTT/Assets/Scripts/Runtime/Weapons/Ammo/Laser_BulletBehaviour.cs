@@ -9,11 +9,14 @@ namespace TTT
         #region FIELDS
 
         private LineRenderer _Beam;
+        private Transform gunMuzzle;
+        public float BulletLifeTime = 5f;
         public float BeamDuration = 0.1f;
         public int Damage = 50;
         public Color LaserColor = Color.red;
         public float BeamMaxLen = 100f;
         public float BeamWidth = 0.1f;
+        private Vector3 horizontalDirection;
 
         #endregion FIELDS
 
@@ -21,6 +24,8 @@ namespace TTT
 
         private void Awake()
         {
+            gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
+            horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
             SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
             _Beam = GetComponent<LineRenderer>();
             _Beam.useWorldSpace = true;
@@ -29,6 +34,7 @@ namespace TTT
             _Beam.widthMultiplier = BeamWidth;
             _Beam.SetPosition(0, transform.position);
             StartCoroutine(Laz());
+            Destroy(this, BulletLifeTime);
         }
 
         #endregion UNITY METHODS
@@ -38,7 +44,7 @@ namespace TTT
         private IEnumerator Laz()
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, BeamMaxLen))
+            if (Physics.Raycast(transform.position, horizontalDirection, out hit, BeamMaxLen))
             {
                 _Beam.SetPosition(1, hit.point);
                 if (hit.collider.gameObject.CompareTag("Boss"))
@@ -68,7 +74,7 @@ namespace TTT
             }
             else
             {
-                _Beam.SetPosition(1, transform.position + (transform.forward * BeamMaxLen));
+                _Beam.SetPosition(1, transform.position + (horizontalDirection * BeamMaxLen));
             }
             yield return null;
             StartCoroutine(BeamDurationTimer());

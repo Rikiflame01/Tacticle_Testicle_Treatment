@@ -16,6 +16,7 @@ TagManager:
   - MeleeEnemy
   - RangedEnemy
   - SpecialEnemy
+  - GunMuzzle
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,9 @@ namespace TTT
         #region FIELDS
 
         private Rigidbody _bulletRb;
+        private Transform gunMuzzle;
         public float shootingForce = 1000f;
+        public float BulletLifeTime = 5f;
         public int NumberOfBounces = 4;
         private Vector3 lastVel;
         private float currSpeed;
@@ -21,13 +23,13 @@ namespace TTT
 
         private void Awake()
         {
+            gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
             SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
             Rigidbody bulletRb = this.GetComponent<Rigidbody>();
-
-            Vector3 horizontalDirection = this.transform.forward.normalized;
+            Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
             bulletRb.AddForce(horizontalDirection * shootingForce);
 
-            Destroy(this, 5f);
+            Destroy(this, BulletLifeTime);
         }
 
         private void LateUpdate()

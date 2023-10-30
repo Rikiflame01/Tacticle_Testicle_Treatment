@@ -8,6 +8,7 @@ namespace TTT
     {
         #region FIELDS
 
+        private Transform gunMuzzle;
         public float explosionRadius = 5f;
         public int ExplosionDamage = 25;
         public GameObject explosionEffect;
@@ -20,10 +21,11 @@ namespace TTT
 
         private void Awake()
         {
+            gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
             SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
             Rigidbody bulletRb = this.GetComponent<Rigidbody>();
 
-            Vector3 horizontalDirection = this.transform.forward.normalized;
+            Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
             bulletRb.AddForce(horizontalDirection * shootingForce);
 
             Destroy(this, BulletLifeTime);
@@ -33,11 +35,23 @@ namespace TTT
         {
             if (collision.gameObject.CompareTag("Boss"))
             {
-                SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage);
+                SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage, 3);
+            }
+            if (collision.gameObject.CompareTag("MeleeEnemy"))
+            {
+                SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+            }
+            if (collision.gameObject.CompareTag("RangedEnemy"))
+            {
+                SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+            }
+            if (collision.gameObject.CompareTag("SpecialEnemy"))
+            {
+                SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
             }
             else
             {
-                SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision);
+                SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision, 2);
             }
 
             Explode();
