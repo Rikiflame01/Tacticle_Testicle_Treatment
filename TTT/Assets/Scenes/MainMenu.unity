@@ -3022,6 +3022,7 @@ MonoBehaviour:
   bossMusic: {fileID: 8300000, guid: d2751dd3b22ea2548aecc7ef09fc513f, type: 3}
   deathMusic: {fileID: 8300000, guid: 4d9fc731041b063499d51b2325e688df, type: 3}
   victoryMusic: {fileID: 8300000, guid: 26ca2f6631b602342858900a7d9aa854, type: 3}
+  quizMusic: {fileID: 8300000, guid: 79194ec90c56b5f4b82e75904e051f6f, type: 3}
   organLevelsMusic:
   - {fileID: 8300000, guid: 7daa30671d6b9074baebadbe6805859a, type: 3}
 --- !u!1 &998066794

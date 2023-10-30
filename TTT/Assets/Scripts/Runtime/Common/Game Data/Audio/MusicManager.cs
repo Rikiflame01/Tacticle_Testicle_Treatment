@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip bossMusic;
     public AudioClip deathMusic;
     public AudioClip victoryMusic;
+    public AudioClip quizMusic;
     public AudioClip[] organLevelsMusic; 
 
     private AudioSource audioSource;
@@ -29,6 +30,9 @@ public class MusicManager : MonoBehaviour
                 break;
             case "GameScene":
                 PlayMusic(gameSceneMusic);
+                break;
+            case "Quiz":
+                PlayMusic(quizMusic);
                 break;
             default:
                 if (scene.name.StartsWith("Level"))
