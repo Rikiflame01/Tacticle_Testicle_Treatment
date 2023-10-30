@@ -1484,7 +1484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -339, y: -296}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &213020384
@@ -3128,6 +3128,7 @@ GameObject:
   - component: {fileID: 600597851}
   - component: {fileID: 600597850}
   - component: {fileID: 600597849}
+  - component: {fileID: 600597852}
   m_Layer: 0
   m_Name: MainMenuRobot
   m_TagString: Untagged
@@ -3246,6 +3247,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &600597852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600597847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebaabc07938870b4d87747382b487999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobSpeed: 0.2
+  bobHeight: 0.4
+  lockZ: 1
+  lockRotation: 1
+  XAmplitude: 0.3
+  YAmplitude: 0.3
+  ZAmplitude: 0.15
+  XSpeed: 0.35
+  YSpeed: 0.35
+  ZSpeed: 0.2
+  RotationAmplitude: 1.5
+  RotationSpeedMultiplier: 0.25
+  rotationSpeed: 0.2
 --- !u!1 &627454957
 GameObject:
   m_ObjectHideFlags: 0

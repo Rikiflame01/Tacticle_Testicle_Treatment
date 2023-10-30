@@ -20,6 +20,7 @@ namespace TTT
 
         private void Awake()
         {
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
             Rigidbody bulletRb = this.GetComponent<Rigidbody>();
 
             Vector3 horizontalDirection = this.transform.forward.normalized;

@@ -22,6 +22,7 @@ namespace TTT
 
         private void Awake()
         {
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingRocket);
             _bulletRb = this.GetComponent<Rigidbody>();
 
             horizontalDirection = this.transform.forward.normalized;
