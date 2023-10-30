@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "QuizQuestionSO", menuName = "ScriptableObjects/QuizQuestionSO", order = 90)]
+[System.Serializable]
 public class QuizQuestionSO : ScriptableObject
 {
     [SerializeField][TextArea] private string QuestionText;
