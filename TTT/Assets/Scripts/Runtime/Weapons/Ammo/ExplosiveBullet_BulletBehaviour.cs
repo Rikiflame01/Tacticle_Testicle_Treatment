@@ -63,11 +63,6 @@ namespace TTT
 
         #region METHODS
 
-        public void OnDestroy()
-        {
-            Explode();
-        }
-
         public void Explode()
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
@@ -84,7 +79,7 @@ namespace TTT
             // Instantiate the explosion effect
             Instantiate(explosionEffect, transform.position, transform.rotation);
             // Destroy the bullet
-            //Destroy(this);
+            Destroy(this);
         }
 
         #endregion METHODS
