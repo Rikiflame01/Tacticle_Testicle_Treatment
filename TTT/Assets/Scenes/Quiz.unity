@@ -390,74 +390,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26425091}
   m_CullTransparentMesh: 1
---- !u!1 &80646245
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 80646248}
-  - component: {fileID: 80646247}
-  - component: {fileID: 80646246}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &80646246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80646245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &80646247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80646245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &80646248
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80646245}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350544918
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,9 +906,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fe954ff6b3adb49b6c2334c9809ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeCanvas: {fileID: 0}
-  UpgradeChoice_1: {fileID: 0}
-  UpgradeChoice_2: {fileID: 0}
+  UpgradeCanvas: {fileID: 421061491}
+  UpgradeChoice_1: {fileID: 1922002764}
+  UpgradeChoice_2: {fileID: 817456052}
   PlayerData: {fileID: 11400000, guid: ce88cf2f85e304a409079ef059be39e7, type: 2}
   GameData: {fileID: 11400000, guid: eb5e0694f252cf047a24e4e9e2793310, type: 2}
   PlayerAmmo: {fileID: 11400000, guid: 58ab14a8ebb00034db375b7d80242dc7, type: 2}
@@ -2844,6 +2776,5 @@ SceneRoots:
   - {fileID: 350544921}
   - {fileID: 1324444482}
   - {fileID: 450907506}
-  - {fileID: 80646248}
   - {fileID: 421061492}
   - {fileID: 1892995822}

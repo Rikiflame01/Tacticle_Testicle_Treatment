@@ -15,6 +15,7 @@ public class PlayerData : ScriptableObject
     public AmmoSO PlayerAmmo;
     private int _QuestionLevel;
     private int _CurrentLevel;
+    private bool quizStarted;
 
     #endregion FIELDS
 
@@ -30,6 +31,12 @@ public class PlayerData : ScriptableObject
     public int GetCurrentLevel() => _CurrentLevel;
 
     public void SetCurrentLevel(int level) => _CurrentLevel = level;
+
+    public void IncrementCurrentLevel() => _CurrentLevel++;
+
+    public void SetQuizStarted(bool quiz) => quizStarted = quiz;
+
+    public bool GetQuizStarted() => quizStarted;
 
     /*    #region HEALTH
 

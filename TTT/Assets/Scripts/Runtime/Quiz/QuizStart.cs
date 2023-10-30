@@ -13,15 +13,28 @@ namespace TTT
         public TextMeshProUGUI text;
         public PlayerData PlayerData;
         private PauseMenu pauseMenu;
+        private AudioListener audioListener;
+        private bool startQuiz;
 
         private void Awake()
-        { canvas.enabled = false; }
+        {
+            pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<PauseMenu>();
+            audioListener = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioListener>();
+            canvas.enabled = false;
+            startQuiz = false;
+        }
+
+        private void Update()
+        {
+            if (!PlayerData.GetQuizStarted())
+                audioListener.enabled = true;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
-                SceneManager.LoadSceneAsync("Quiz", LoadSceneMode.Additive);
+                //SceneManager.LoadSceneAsync("Quiz", LoadSceneMode.Additive);
                 StartCoroutine(FadeInText());
             }
         }
@@ -32,8 +45,12 @@ namespace TTT
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    PlayerData.SetQuestionLevel(QuestionLevel);
-                    StartQuiz();
+                    if (!startQuiz)
+                    {
+                        startQuiz = true;
+                        PlayerData.SetQuestionLevel(QuestionLevel);
+                        StartQuiz();
+                    }
                 }
             }
         }
@@ -42,15 +59,17 @@ namespace TTT
         {
             if (other.CompareTag("Player"))
             {
-                SceneManager.UnloadSceneAsync("Quiz");
+                //SceneManager.UnloadSceneAsync("Quiz");
                 StartCoroutine(FadeOutText());
             }
         }
 
         public void StartQuiz()
         {
+            audioListener.enabled = false;
             pauseMenu.Pause();
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Quiz"));
+            PlayerData.SetQuizStarted(true);
+            SceneManager.LoadSceneAsync("Quiz", LoadSceneMode.Additive);
         }
 
         public IEnumerator FadeInText()

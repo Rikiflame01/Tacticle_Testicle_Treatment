@@ -35,6 +35,8 @@ namespace TTT
         private void Start()
         {
             //PlayerData.Reset();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             UpgradeChoice_1_Text = UpgradeChoice_1.GetComponentInChildren<TextMeshProUGUI>();
             UpgradeChoice_2_Text = UpgradeChoice_2.GetComponentInChildren<TextMeshProUGUI>();
             UpgradeCanvas.enabled = false;
@@ -87,7 +89,8 @@ namespace TTT
 
                 if (choice_1 == null && choice_2 == null)
                 {
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
+                    SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
+                    PlayerData.SetQuizStarted(false);
                     SceneManager.UnloadSceneAsync("quiz");
                 }
 
@@ -118,6 +121,7 @@ namespace TTT
             else
             {
                 SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
+                PlayerData.SetQuizStarted(false);
                 SceneManager.UnloadSceneAsync("quiz");
             }
         }
@@ -127,6 +131,7 @@ namespace TTT
             PlayerAmmo.AddBulletType(Choice);
             PlayerData.InitializeAmmoSO();
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
+            PlayerData.SetQuizStarted(false);
             SceneManager.UnloadSceneAsync("Quiz");
         }
 

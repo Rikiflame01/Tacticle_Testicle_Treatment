@@ -17,6 +17,7 @@ TagManager:
   - RangedEnemy
   - SpecialEnemy
   - GunMuzzle
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
