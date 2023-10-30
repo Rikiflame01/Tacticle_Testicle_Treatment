@@ -21,4 +21,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c004af0dddeb7634d991f16d3427afcc, type: 2}
   CurrentBulletTypes:
   - {fileID: 11400000, guid: 4db6b61ce56cccb47b5d5e216c62ba28, type: 2}
+  - {fileID: 11400000, guid: b702dd83d5ef25b42956428a14623d23, type: 2}
   currentBulletTypeIndex: 0

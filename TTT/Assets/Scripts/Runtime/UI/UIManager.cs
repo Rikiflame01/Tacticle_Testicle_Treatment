@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     }
 
     private Dictionary<UICanvas, GameObject> canvases = new Dictionary<UICanvas, GameObject>();
+    public PlayerData PlayerData;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class UIManager : MonoBehaviour
         canvases.Add(UICanvas.Tutorial, tutorialCanvas);
         canvases.Add(UICanvas.Credits, creditsCanvas);
         canvases.Add(UICanvas.Learn, learnCanvas);
-
+        PlayerData.Reset();
         ActivateCanvas(UICanvas.MainMenu);
     }
 
@@ -48,7 +49,7 @@ public class UIManager : MonoBehaviour
     {
         ActivateCanvas(UICanvas.Tutorial);
     }
-    
+
     public void ActivateCreditsCanvas()
     {
         ActivateCanvas(UICanvas.Credits);
@@ -68,5 +69,5 @@ public class UIManager : MonoBehaviour
     public GameObject settingsCanvas;
     public GameObject tutorialCanvas;
     public GameObject creditsCanvas;
-    public GameObject learnCanvas; 
+    public GameObject learnCanvas;
 }

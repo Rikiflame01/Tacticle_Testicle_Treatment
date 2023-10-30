@@ -4124,6 +4124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3a86ff8bc34b447a3752dea13f4e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: ce88cf2f85e304a409079ef059be39e7, type: 2}
   mainMenuCanvas: {fileID: 511920456}
   settingsCanvas: {fileID: 213020382}
   tutorialCanvas: {fileID: 1565348103}

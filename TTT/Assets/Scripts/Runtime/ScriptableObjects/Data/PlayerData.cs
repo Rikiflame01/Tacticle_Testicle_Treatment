@@ -69,6 +69,9 @@ public class PlayerData : ScriptableObject
     [Tooltip("Returns the Question Level For the current Question")]
     public int GetQuestionLevel() => _QuestionLevel;
 
+    [Tooltip("Increases the Question Level")]
+    public void IncreaseQuestionLevel() => _QuestionLevel++;
+
     #endregion QUIZRESULTS
 
     #region AMMO
@@ -78,6 +81,12 @@ public class PlayerData : ScriptableObject
         PlayerAmmo.resetBulletTypes();
         PlayerAmmo.resetAmmo();
     }
+
+    public void InitializeAmmoSO() => PlayerAmmo.Initialize();
+
+    public void IncrementBulletTypeIndex() => PlayerAmmo.incrementBulletTypeIndes();
+
+    public string GetBulletName() => PlayerAmmo.getBulletName();
 
     #endregion AMMO
 

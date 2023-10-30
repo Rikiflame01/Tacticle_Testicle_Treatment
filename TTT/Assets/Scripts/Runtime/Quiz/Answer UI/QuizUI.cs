@@ -70,6 +70,7 @@ namespace TTT
 
             if (RandomQuestion.IsCorrectAnswer(index))
             {
+                PlayerData.IncreaseQuestionLevel();
                 UpgradeCanvas.enabled = true;
                 _QuizUIPanel.SetActive(false);
                 BulletTypeSO choice_1;
@@ -124,6 +125,7 @@ namespace TTT
         private void OnBtnClicked(BulletTypeSO Choice)
         {
             PlayerAmmo.AddBulletType(Choice);
+            PlayerData.InitializeAmmoSO();
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
             SceneManager.UnloadSceneAsync("Quiz");
         }

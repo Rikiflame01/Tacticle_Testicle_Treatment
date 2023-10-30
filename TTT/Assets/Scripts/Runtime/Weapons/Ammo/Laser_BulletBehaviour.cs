@@ -26,7 +26,7 @@ namespace TTT
         {
             gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
             horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
-            SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting);
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.shooting, 1);
             _Beam = GetComponent<LineRenderer>();
             _Beam.useWorldSpace = true;
             _Beam.enabled = true;
