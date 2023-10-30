@@ -25,6 +25,7 @@ namespace TTT
             canvas.enabled = false;
             startQuiz = false;
             used = false;
+            QuestionLevel = Random.Range(1, 5);
         }
 
         private void Update()

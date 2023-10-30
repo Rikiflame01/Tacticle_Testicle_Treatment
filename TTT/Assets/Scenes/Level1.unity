@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1198059423}
-  m_IndirectSpecularColor: {r: 0.46459135, g: 0.08932908, b: 0.07318911, a: 1}
+  m_IndirectSpecularColor: {r: 0.4565853, g: 0.08648196, b: 0.07073562, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1193,7 +1193,8 @@ MonoBehaviour:
     type: 3}
   shieldPickupPrefab: {fileID: 2653500287089678030, guid: 8c21046ca67760643a9f717a0a5473d6,
     type: 3}
-  QuizSpawnPrefab: {fileID: 0}
+  QuizSpawnPrefab: {fileID: 1693647807287224319, guid: e1a91b198a161904ea36076167bc411c,
+    type: 3}
 --- !u!4 &238380428
 Transform:
   m_ObjectHideFlags: 0

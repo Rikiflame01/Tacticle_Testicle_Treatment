@@ -72,7 +72,7 @@ namespace TTT
 
             if (RandomQuestion.IsCorrectAnswer(index))
             {
-                PlayerData.IncreaseQuestionLevel();
+                //PlayerData.IncreaseQuestionLevel();
                 UpgradeCanvas.enabled = true;
                 _QuizUIPanel.SetActive(false);
                 BulletTypeSO choice_1;

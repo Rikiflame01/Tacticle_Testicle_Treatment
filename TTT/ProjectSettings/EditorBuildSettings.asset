@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TesticleBossMap.unity
     guid: 39620e339e922f440a9a2813df1b5ffe
+  - enabled: 1
+    path: Assets/Scenes/LungBossMap.unity
+    guid: d45eb72a95225424aa9203569b7c120c
   m_configObjects: {}
