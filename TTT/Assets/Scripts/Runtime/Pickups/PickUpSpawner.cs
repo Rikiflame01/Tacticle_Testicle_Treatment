@@ -29,6 +29,12 @@ public class PickupSpawner : MonoBehaviour
         else
             pickupPrefab = shieldPickupPrefab;
 
-        Instantiate(pickupPrefab, position, Quaternion.identity);
+        GameObject spawnedPickup = Instantiate(pickupPrefab, position, Quaternion.identity);
+
+        // Adjust rotation for shield prefab
+        if (pickupPrefab == shieldPickupPrefab)
+        {
+            spawnedPickup.transform.rotation = Quaternion.Euler(new Vector3(-90, 0, 0)); // Adjust the rotation values as needed
+        }
     }
 }
