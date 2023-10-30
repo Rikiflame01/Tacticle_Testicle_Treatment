@@ -23,6 +23,7 @@ namespace TTT
         {
             CommingSoonPanel.SetActive(false);
             ChoicePanel.SetActive(true);
+            LoadQuestions();
         }
 
         #endregion UNITY METHODS
@@ -58,6 +59,41 @@ namespace TTT
             ChoicePanel.SetActive(true);
         }
 
-        #endregion METHODS
+        private void LoadQuestions()
+        {
+            string path = "Assets/Scriptable Objects/Questions";
+            string filter = "t:QuizQuestionSO";
+            //Debug.Log("Finding assets");
+            string[] guides = AssetDatabase.FindAssets(filter, new[] { path });
+            //Debug.Log("Found assets of length: " + (guides.Length > 0 ? guides.Length : "No assets found"));
+            QuizQuestionSO[] quizQuestionSOs = new QuizQuestionSO[guides.Length];
+            int index = 0;
+            foreach (string guide in guides)
+            {
+                var tmp = AssetDatabase.GUIDToAssetPath(guide);
+                if (tmp.Contains("QuizQuestion_"))
+                {
+                    //Debug.Log("Found question: " + tmp);
+                    quizQuestionSOs[index] = AssetDatabase.LoadAssetAtPath<QuizQuestionSO>(tmp);
+                    index++;
+                }
+                else
+                    Debug.Log("Not a question: " + tmp);
+            }
+            //Debug.Log("Sorting Array");
+            for (int i = 0; i < quizQuestionSOs.Length; i++)
+            {
+                for (int j = 0; j < quizQuestionSOs.Length - 1; j++)
+                {
+                    if (quizQuestionSOs[j].GetQuestionIndex() > quizQuestionSOs[j + 1].GetQuestionIndex())
+                    {
+                        QuizQuestionSO tmp = quizQuestionSOs[j];
+                        quizQuestionSOs[j] = quizQuestionSOs[j + 1];
+                        quizQuestionSOs[j + 1] = tmp;
+                    }
+                }
+            }
+
+            #endregion METHODS
+        }
     }
-}
