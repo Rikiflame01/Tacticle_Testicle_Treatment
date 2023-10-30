@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426092832f350dc43adf48985a0db970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRadius: 15
-  ExplosionDamage: 45
+  explosionRadius: 6
+  ExplosionDamage: 35
   explosionEffect: {fileID: 3578657425433702697, guid: 658c61d155a8286489b624a981f9b7fb,
     type: 3}
   BulletLifeTime: 5

@@ -9,7 +9,7 @@ namespace TTT
         #region FIELDS
 
         private Transform gunMuzzle;
-        public float explosionRadius = 5f;
+        public float explosionRadius = 6f;
         public int ExplosionDamage = 35;
         public GameObject explosionEffect;
         public float BulletLifeTime = 5f;

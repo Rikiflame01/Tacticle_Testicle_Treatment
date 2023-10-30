@@ -9,7 +9,7 @@ namespace TTT
     {
         #region FIELDS
 
-        public float BulletLifeTime = 5f;
+        public float BulletLifeTime = 2f;
         public int NumberOfBullets = 8;
         public float spreadAngle = 45f;
         public float spreadAngleIncrement;
@@ -21,7 +21,7 @@ namespace TTT
 
         private void Awake()
         {
-            SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
+            //SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
             SpawnCones();
 
             Destroy(this, BulletLifeTime);

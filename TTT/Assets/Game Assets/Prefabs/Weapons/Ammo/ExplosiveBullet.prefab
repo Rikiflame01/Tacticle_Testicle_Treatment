@@ -99,7 +99,7 @@ MonoBehaviour:
   ExplosionDamage: 25
   explosionEffect: {fileID: 3578657425433702697, guid: 658c61d155a8286489b624a981f9b7fb,
     type: 3}
-  BulletLifeTime: 3
+  BulletLifeTime: 5
 --- !u!1 &8443118487497869328
 GameObject:
   m_ObjectHideFlags: 0

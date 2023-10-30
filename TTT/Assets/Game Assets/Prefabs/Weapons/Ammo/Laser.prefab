@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1866c68a9c1fd547a01e285e3fdbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BeamDuration: 1
+  BulletLifeTime: 5
+  BeamDuration: 0.5
   Damage: 50
   LaserColor: {r: 1, g: 0, b: 0, a: 1}
   BeamMaxLen: 100

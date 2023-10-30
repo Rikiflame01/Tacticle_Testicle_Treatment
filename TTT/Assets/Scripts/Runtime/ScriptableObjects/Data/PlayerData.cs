@@ -88,6 +88,8 @@ public class PlayerData : ScriptableObject
 
     public string GetBulletName() => PlayerAmmo.getBulletName();
 
+    public int GetCurrentAmmo() => PlayerAmmo.getCurrentAmmo();
+
     #endregion AMMO
 
     #endregion METHODS
