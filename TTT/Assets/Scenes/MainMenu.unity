@@ -3261,15 +3261,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebaabc07938870b4d87747382b487999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobSpeed: 0.2
-  bobHeight: 0.4
+  bobSpeed: 1.5
+  bobHeight: 1
   lockZ: 1
   lockRotation: 1
-  XAmplitude: 0.3
-  YAmplitude: 0.3
+  XAmplitude: 0.15
+  YAmplitude: 0.15
   ZAmplitude: 0.15
-  XSpeed: 0.35
-  YSpeed: 0.35
+  XSpeed: 0.2
+  YSpeed: 0.2
   ZSpeed: 0.2
   RotationAmplitude: 1.5
   RotationSpeedMultiplier: 0.25
