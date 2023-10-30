@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Briefing");
+        SceneManager.LoadScene("LevelSelect");
     }
 
     public GameObject mainMenuCanvas;
