@@ -23,7 +23,7 @@ namespace TTT
         {
             CommingSoonPanel.SetActive(false);
             ChoicePanel.SetActive(true);
-            LoadQuestions();
+            //LoadQuestions();
         }
 
         #endregion UNITY METHODS
@@ -59,7 +59,7 @@ namespace TTT
             ChoicePanel.SetActive(true);
         }
 
-        private void LoadQuestions()
+        /*private void LoadQuestions()
         {
             string path = "Assets/Scriptable Objects/Questions";
             string filter = "t:QuizQuestionSO";
@@ -95,6 +95,6 @@ namespace TTT
             }
 
             #endregion METHODS
-        }
+        }*/
     }
 }
