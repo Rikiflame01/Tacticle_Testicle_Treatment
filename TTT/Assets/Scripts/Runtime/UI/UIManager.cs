@@ -62,7 +62,7 @@ public class UIManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Briefing");
     }
 
     public GameObject mainMenuCanvas;

@@ -14,6 +14,7 @@ public class PlayerData : ScriptableObject
 
     public AmmoSO PlayerAmmo;
     private int _QuestionLevel;
+    private int _CurrentLevel;
 
     #endregion FIELDS
 
@@ -25,6 +26,10 @@ public class PlayerData : ScriptableObject
         ResetResults();
         ResetAmmoSO();
     }
+
+    public int GetCurrentLevel() => _CurrentLevel;
+
+    public void SetCurrentLevel(int level) => _CurrentLevel = level;
 
     /*    #region HEALTH
 
