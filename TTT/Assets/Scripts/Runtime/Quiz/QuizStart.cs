@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace TTT
 {
@@ -15,6 +16,7 @@ namespace TTT
         private PauseMenu pauseMenu;
         private AudioListener audioListener;
         private bool startQuiz;
+        private bool used;
 
         private void Awake()
         {
@@ -22,12 +24,16 @@ namespace TTT
             audioListener = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioListener>();
             canvas.enabled = false;
             startQuiz = false;
+            used = false;
         }
 
         private void Update()
         {
-            if (!PlayerData.GetQuizStarted())
+            if (used && !PlayerData.GetQuizStarted())
+            {
                 audioListener.enabled = true;
+                Destroy(this);
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -69,6 +75,7 @@ namespace TTT
             audioListener.enabled = false;
             pauseMenu.Pause();
             PlayerData.SetQuizStarted(true);
+            used = true;
             SceneManager.LoadSceneAsync("Quiz", LoadSceneMode.Additive);
         }
 
