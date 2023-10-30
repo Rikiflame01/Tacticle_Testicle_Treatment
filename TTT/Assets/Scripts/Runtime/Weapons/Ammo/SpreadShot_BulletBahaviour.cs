@@ -21,6 +21,14 @@ namespace TTT
 
         private void Awake()
         {
+            try
+            {
+                SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive, 2);
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log("Sound no work: " + e);
+            }
             //SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
             SpawnCones();
 

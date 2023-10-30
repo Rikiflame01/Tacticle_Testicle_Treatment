@@ -36,6 +36,66 @@ namespace TTT
         {
             if (collision.gameObject.CompareTag("Boss"))
             {
+                try
+                {
+                    SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage, 2);
+                }
+                catch (System.Exception e)
+                {
+                    Debug.Log("Sound no work: " + e);
+                }
+                //SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage, 3);
+            }
+            if (collision.gameObject.CompareTag("MeleeEnemy"))
+            {
+                try
+                {
+                    SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 2);
+                }
+                catch (System.Exception e)
+                {
+                    Debug.Log("Sound no work: " + e);
+                }
+                //SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+            }
+            if (collision.gameObject.CompareTag("RangedEnemy"))
+            {
+                try
+                {
+                    SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 2);
+                }
+                catch (System.Exception e)
+                {
+                    Debug.Log("Sound no work: " + e);
+                }
+                //SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+            }
+            if (collision.gameObject.CompareTag("SpecialEnemy"))
+            {
+                try
+                {
+                    SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 2);
+                }
+                catch (System.Exception e)
+                {
+                    Debug.Log("Sound no work: " + e);
+                }
+                //SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+            }
+            else
+            {
+                try
+                {
+                    SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision, 2);
+                }
+                catch (System.Exception e)
+                {
+                    Debug.Log("Sound no work: " + e);
+                }
+                //SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision, 2);
+            }
+            /*if (collision.gameObject.CompareTag("Boss"))
+            {
                 SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage, 3);
             }
             if (collision.gameObject.CompareTag("MeleeEnemy"))
@@ -53,7 +113,7 @@ namespace TTT
             else
             {
                 SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision, 2);
-            }
+            }*/
 
             Explode();
         }

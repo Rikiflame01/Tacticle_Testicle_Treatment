@@ -50,27 +50,67 @@ namespace TTT
                 _Beam.SetPosition(1, hit.point);
                 if (hit.collider.gameObject.CompareTag("Boss"))
                 {
-                    SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage, 3);
+                    try
+                    {
+                        SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage, 2);
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.Log("Sound no work: " + e);
+                    }
+                    //SFXManager.Instance.PlaySFX(SFXManager.Instance.bossDamage, 3);
                     hit.collider.gameObject.GetComponent<HealthComponent>().TakeDamage(Damage);
                 }
                 if (hit.collider.gameObject.CompareTag("MeleeEnemy"))
                 {
-                    SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+                    try
+                    {
+                        SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 2);
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.Log("Sound no work: " + e);
+                    }
+                    //SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
                     hit.collider.gameObject.GetComponent<HealthComponent>().TakeDamage(Damage);
                 }
                 if (hit.collider.gameObject.CompareTag("RangedEnemy"))
                 {
-                    SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+                    try
+                    {
+                        SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 2);
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.Log("Sound no work: " + e);
+                    }
+                    //SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
                     hit.collider.gameObject.GetComponent<HealthComponent>().TakeDamage(Damage);
                 }
                 if (hit.collider.gameObject.CompareTag("SpecialEnemy"))
                 {
-                    SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
+                    try
+                    {
+                        SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 2);
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.Log("Sound no work: " + e);
+                    }
+                    //SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
                     hit.collider.gameObject.GetComponent<HealthComponent>().TakeDamage(Damage);
                 }
                 else
                 {
-                    SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision, 2);
+                    try
+                    {
+                        SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision, 2);
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.Log("Sound no work: " + e);
+                    }
+                    //SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision, 2);
                 }
             }
             else
