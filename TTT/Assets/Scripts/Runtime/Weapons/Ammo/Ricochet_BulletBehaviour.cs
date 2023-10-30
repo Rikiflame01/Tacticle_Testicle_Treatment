@@ -7,12 +7,49 @@ namespace TTT
     public class Ricochet_BulletBehaviour : MonoBehaviour
     {
         #region FIELDS
-        #endregion
+
+        private Rigidbody _bulletRb;
+        public float shootingForce = 1000f;
+        public int NumberOfBounces = 4;
+        private Vector3 lastVel;
+        private float currSpeed;
+        private int currBounces = 0;
+
+        #endregion FIELDS
 
         #region UNITY METHODS
-        #endregion
 
-        #region METHODS
-        #endregion
+        private void Awake()
+        {
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
+            Rigidbody bulletRb = this.GetComponent<Rigidbody>();
+
+            Vector3 horizontalDirection = this.transform.forward.normalized;
+            bulletRb.AddForce(horizontalDirection * shootingForce);
+
+            Destroy(this, 5f);
+        }
+
+        private void LateUpdate()
+        {
+            lastVel = _bulletRb.velocity;
+
+            if (_bulletRb.velocity.magnitude < 1f)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (currBounces >= NumberOfBounces)
+                return;
+            currSpeed = lastVel.magnitude;
+            Vector3 reflect = Vector3.Reflect(lastVel.normalized, collision.contacts[0].normal);
+            _bulletRb.velocity = reflect * currSpeed;
+            currBounces++;
+        }
+
+        #endregion UNITY METHODS
     }
 }

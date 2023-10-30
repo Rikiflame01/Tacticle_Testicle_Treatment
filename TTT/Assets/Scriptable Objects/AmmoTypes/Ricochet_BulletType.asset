@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30dc6a86473fcd498fcc89d85454c80, type: 3}
+  m_Name: Ricochet_BulletType
+  m_EditorClassIdentifier: 
+  bulletName: Ricochet
+  bulletPrefab: {fileID: 4046250473123842298, guid: 8e871052f06cdec4985acb0ad054957b,
+    type: 3}
+  maxAmmo: 250
+  currentAmmo: 250

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30dc6a86473fcd498fcc89d85454c80, type: 3}
+  m_Name: Laser_BulletType
+  m_EditorClassIdentifier: 
+  bulletName: Laser
+  bulletPrefab: {fileID: 3123075598482578652, guid: 04d94aa3c7f24bc44a3483c44a0c053b,
+    type: 3}
+  maxAmmo: 50
+  currentAmmo: 50

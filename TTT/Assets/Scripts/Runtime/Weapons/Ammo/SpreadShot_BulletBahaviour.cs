@@ -7,12 +7,41 @@ namespace TTT
     public class SpreadShot_BulletBahaviour : MonoBehaviour
     {
         #region FIELDS
-        #endregion
+
+        public int NumberOfBullets = 5;
+        public float spreadAngle = 30f;
+        public float spreadAngleIncrement;
+        public GameObject bulletPrefab;
+
+        #endregion FIELDS
 
         #region UNITY METHODS
-        #endregion
+
+        private void Awake()
+        {
+            //SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive);
+            SpawnChostCones();
+
+            Destroy(this, 5f);
+        }
+
+        #endregion UNITY METHODS
 
         #region METHODS
-        #endregion
+
+        private void SpawnChostCones()
+        {
+            float angle = -spreadAngle / 2;
+            float angleIncrement = spreadAngle / NumberOfBullets;
+
+            for (int i = 0; i < NumberOfBullets; i++)
+            {
+                float currentAngle = angle + (i * angleIncrement);
+                Quaternion rotation = Quaternion.Euler(0, currentAngle, 0);
+                GameObject bullet = Instantiate(bulletPrefab, this.transform.position, rotation);
+            }
+        }
+
+        #endregion METHODS
     }
 }

@@ -12,7 +12,6 @@ public class ProjectileCollisionScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("MeleeEnemy"))
         {
-
             SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyGrunt, 3);
         }
         if (collision.gameObject.CompareTag("RangedEnemy"))
@@ -25,7 +24,6 @@ public class ProjectileCollisionScript : MonoBehaviour
         }
         else
         {
-
             SFXManager.Instance.PlaySFX(SFXManager.Instance.projectileCollision, 2);
         }
 
