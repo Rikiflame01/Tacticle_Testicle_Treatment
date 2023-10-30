@@ -35,12 +35,12 @@ namespace TTT
             {
                 case 1:
                     PlayerData.SetCurrentLevel(1);
-                    SceneManager.LoadScene("Level1");
+                    SceneManager.LoadScene("Briefing");
                     break;
 
                 case 2:
                     PlayerData.SetCurrentLevel(2);
-                    SceneManager.LoadScene("Level1");
+                    SceneManager.LoadScene("Briefing");
                     break;
 
                 case 3:
