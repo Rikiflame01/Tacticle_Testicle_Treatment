@@ -40,6 +40,7 @@ namespace TTT
 
         private void Start()
         {
+            PlayerData.Reset();
             updateAmmoHud();
             PlayerData.InitializeAmmoSO();
             StandardAmmoCountText = StandardAmmo.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
