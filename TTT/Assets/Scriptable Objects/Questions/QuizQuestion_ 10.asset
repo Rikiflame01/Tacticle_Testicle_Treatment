@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84194446bcd9a7940b5805804a7283aa, type: 3}
-  m_Name: QuizQuestion_ 2
+  m_Name: QuizQuestion_ 10
   m_EditorClassIdentifier: 
-  QuestionText: What is the survival rate of lung cancer
+  QuestionText: Which is the deadliest cancer
   QuestionAnswers:
-  - AnswerText: 86%
+  - AnswerText: Breast Cancer
     IsCorrect: 0
-  - AnswerText: 50%
-    IsCorrect: 0
-  - AnswerText: 4%
-    IsCorrect: 0
-  - AnswerText: 17%
+  - AnswerText: Lung Cancer
     IsCorrect: 1
-  QuestionIndex: 1
-  QuestionLevel: 1
+  - AnswerText: Prostate Cancer
+    IsCorrect: 0
+  - AnswerText: Colon/Rectal Cancer
+    IsCorrect: 0
+  QuestionIndex: 9
+  QuestionLevel: 4

@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84194446bcd9a7940b5805804a7283aa, type: 3}
   m_Name: QuizQuestion_ 1
   m_EditorClassIdentifier: 
-  QuestionText: Test 2
+  QuestionText: What is responsible for 90% of lung cancer cases
   QuestionAnswers:
-  - AnswerText: a2
-    IsCorrect: 0
-  - AnswerText: b2
+  - AnswerText: Smoking
     IsCorrect: 1
-  - AnswerText: c2
+  - AnswerText: Little exercise
     IsCorrect: 0
-  - AnswerText: d2
+  - AnswerText: Too much exercise
     IsCorrect: 0
-  QuestionIndex: 1
-  QuestionLevel: 1
+  - AnswerText: Unhealthy foods
+    IsCorrect: 0
+  QuestionIndex: 0
+  QuestionLevel: 3

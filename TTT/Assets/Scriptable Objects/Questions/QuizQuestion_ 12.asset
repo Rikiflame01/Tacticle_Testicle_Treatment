@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84194446bcd9a7940b5805804a7283aa, type: 3}
-  m_Name: QuizQuestion_ 2
+  m_Name: QuizQuestion_ 12
   m_EditorClassIdentifier: 
-  QuestionText: What is the survival rate of lung cancer
+  QuestionText: What age group is most effected by lung cancer
   QuestionAnswers:
-  - AnswerText: 86%
-    IsCorrect: 0
-  - AnswerText: 50%
-    IsCorrect: 0
-  - AnswerText: 4%
-    IsCorrect: 0
-  - AnswerText: 17%
+  - AnswerText: 60 and older
     IsCorrect: 1
-  QuestionIndex: 1
-  QuestionLevel: 1
+  - AnswerText: 10-20
+    IsCorrect: 0
+  - AnswerText: 20-40
+    IsCorrect: 0
+  - AnswerText: 50-60
+    IsCorrect: 0
+  QuestionIndex: 11
+  QuestionLevel: 2

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84194446bcd9a7940b5805804a7283aa, type: 3}
-  m_Name: QuizQuestion_ 2
+  m_Name: QuizQuestion_ 4
   m_EditorClassIdentifier: 
-  QuestionText: What is the survival rate of lung cancer
+  QuestionText: Testicular cancer affects younger men more often
   QuestionAnswers:
-  - AnswerText: 86%
-    IsCorrect: 0
-  - AnswerText: 50%
-    IsCorrect: 0
-  - AnswerText: 4%
-    IsCorrect: 0
-  - AnswerText: 17%
+  - AnswerText: True
     IsCorrect: 1
-  QuestionIndex: 1
+  - AnswerText: True
+    IsCorrect: 1
+  - AnswerText: False
+    IsCorrect: 0
+  - AnswerText: False
+    IsCorrect: 0
+  QuestionIndex: 3
   QuestionLevel: 1

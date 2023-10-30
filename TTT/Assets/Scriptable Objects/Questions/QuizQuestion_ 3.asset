@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84194446bcd9a7940b5805804a7283aa, type: 3}
   m_Name: QuizQuestion_ 3
   m_EditorClassIdentifier: 
-  QuestionText: Test 4
+  QuestionText: the chance of someone developing lung cancer is 1 in 16
   QuestionAnswers:
-  - AnswerText: a4
-    IsCorrect: 0
-  - AnswerText: b4
-    IsCorrect: 0
-  - AnswerText: c4
-    IsCorrect: 0
-  - AnswerText: d4
+  - AnswerText: True
     IsCorrect: 1
-  QuestionIndex: 3
+  - AnswerText: True
+    IsCorrect: 1
+  - AnswerText: False
+    IsCorrect: 1
+  - AnswerText: False
+    IsCorrect: 1
+  QuestionIndex: 2
   QuestionLevel: 2
