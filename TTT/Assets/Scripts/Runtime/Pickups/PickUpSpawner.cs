@@ -6,20 +6,29 @@ public class PickupSpawner : MonoBehaviour
 {
     public GameObject healthPickupPrefab;
     public GameObject shieldPickupPrefab;
+    public GameObject QuizSpawnPrefab;
 
-    void Start()
+    private void Start()
     {
         EnemyDeathActions.OnDeath += SpawnPickup;
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         EnemyDeathActions.OnDeath -= SpawnPickup;
     }
 
-    void SpawnPickup(Vector3 position)
+    private void SpawnPickup(Vector3 position)
     {
-        GameObject pickupPrefab = Random.value > 0.5f ? healthPickupPrefab : shieldPickupPrefab;
+        GameObject pickupPrefab;
+        float randomValue = Random.value;
+        if (randomValue >= 0.8f)
+            pickupPrefab = QuizSpawnPrefab;
+        else if (randomValue >= 0.4f)
+            pickupPrefab = healthPickupPrefab;
+        else
+            pickupPrefab = shieldPickupPrefab;
+
         Instantiate(pickupPrefab, position, Quaternion.identity);
     }
 }

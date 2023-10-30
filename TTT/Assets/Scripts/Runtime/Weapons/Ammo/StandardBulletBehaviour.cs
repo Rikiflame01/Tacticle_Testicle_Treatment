@@ -19,7 +19,15 @@ namespace TTT
         private void Awake()
         {
             gunMuzzle = GameObject.FindGameObjectWithTag("GunMuzzle").transform;
-            SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive, 1);
+            try
+            {
+                SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive, 2);
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log("Sound no work: " + e);
+            }
+            //SFXManager.Instance.PlaySFX(SFXManager.Instance.shootingExplosive, 1);
             Rigidbody bulletRb = this.GetComponent<Rigidbody>();
 
             Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;

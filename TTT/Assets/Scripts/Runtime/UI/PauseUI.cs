@@ -10,7 +10,15 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SFXManager.Instance.PlaySFX(SFXManager.Instance.pause);
+            try
+            {
+                SFXManager.Instance.PlaySFX(SFXManager.Instance.pause, 2);
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log("Sound no work: " + e);
+            }
+            //SFXManager.Instance.PlaySFX(SFXManager.Instance.pause);
             if (isPaused)
             {
                 Resume();
