@@ -15,6 +15,25 @@ public class MinimapManager : MonoBehaviour
     {
         string[] enemyTags = { "SpecialEnemy", "MeleeEnemy", "RangedEnemy" };
 
+        // New list to track enemies that need to be removed
+        List<GameObject> enemiesToRemove = new List<GameObject>();
+
+        // Check existing enemy icons for destroyed enemies
+        foreach (var enemyIconPair in enemyIconMap)
+        {
+            if (enemyIconPair.Key == null) // Enemy has been destroyed
+            {
+                Destroy(enemyIconPair.Value); // Destroy the icon
+                enemiesToRemove.Add(enemyIconPair.Key); // Mark for removal from the map
+            }
+        }
+
+        // Remove the destroyed enemies from the map
+        foreach (var enemy in enemiesToRemove)
+        {
+            enemyIconMap.Remove(enemy);
+        }
+
         foreach (string tag in enemyTags)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
@@ -34,8 +53,8 @@ public class MinimapManager : MonoBehaviour
                 enemyIconMap[enemy].transform.position = iconPos;
                 enemyIconMap[enemy].transform.rotation = Quaternion.Euler(90f, -90f, 0f);  // Adjust these values as needed
                 enemyIconMap[enemy].transform.localScale = new Vector3(20f, 20f, 20f);  // Adjust these values as needed
-
             }
         }
     }
+
 }
