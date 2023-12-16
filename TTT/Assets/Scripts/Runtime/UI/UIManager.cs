@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("SelectLevel");
     }
 
     public GameObject mainMenuCanvas;

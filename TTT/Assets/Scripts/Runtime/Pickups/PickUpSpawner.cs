@@ -36,5 +36,20 @@ public class PickupSpawner : MonoBehaviour
         {
             spawnedPickup.transform.rotation = Quaternion.Euler(new Vector3(-90, 0, 0)); // Adjust the rotation values as needed
         }
+
+        if (pickupPrefab == QuizSpawnPrefab)
+        {
+            StartCoroutine(DespawnAfterDelay(spawnedPickup, 10f)); // Despawn quiz pickup after 10 seconds
+        }
     }
+
+    private IEnumerator DespawnAfterDelay(GameObject pickup, float delay)
+    {
+        yield return new WaitForSeconds(delay); // Wait for the specified delay
+        if (pickup != null) // Check if the pickup is still present
+        {
+            Destroy(pickup); // Destroy the pickup
+        }
+    }
+
 }
