@@ -1,11 +1,21 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileCollisionScript : MonoBehaviour
 {
     public int damageAmount = 10; // Damage dealt by the projectile
 
+    private IEnumerator DelayDestroy(GameObject gameobj, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameobj);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        StartCoroutine(DelayDestroy(gameObject, 5f));
+
         if (collision.gameObject.CompareTag("Boss"))
         {
             try
@@ -76,6 +86,7 @@ public class ProjectileCollisionScript : MonoBehaviour
             // Destroy the projectile after it hits the enemy
             //Destroy(gameObject);
         }
-        Destroy(gameObject);
+
+
     }
 }

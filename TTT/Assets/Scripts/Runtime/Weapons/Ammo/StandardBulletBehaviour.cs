@@ -33,7 +33,7 @@ namespace TTT
             Vector3 horizontalDirection = new Vector3(gunMuzzle.forward.x, 0, gunMuzzle.forward.z).normalized;
             bulletRb.AddForce(horizontalDirection * shootingForce * 15f);
 
-            Destroy(this, BulletLifeTime);
+ //           Destroy(this, BulletLifeTime);
         }
 
         #endregion UNITY METHODS

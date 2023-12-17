@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3638976268059513401}
   - component: {fileID: 6964941468428842753}
   - component: {fileID: 2938868051564423574}
-  - component: {fileID: 3187514675310643084}
   - component: {fileID: -1249832990652310664}
   - component: {fileID: -5521638049387985099}
   - component: {fileID: -8414758769696908793}
+  - component: {fileID: -8076106320586498366}
   m_Layer: 0
   m_Name: Pistol_Bullet
   m_TagString: Untagged
@@ -87,29 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3187514675310643084
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5733790791273234246}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.84
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: -0.16, z: -0.00000008940697}
 --- !u!54 &-1249832990652310664
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,7 +113,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &-5521638049387985099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,4 +139,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29159e08c1c9a14a8a2da2ec249da84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingForce: 1000
+  shootingForce: 350
+  BulletLifeTime: 5
+--- !u!65 &-8076106320586498366
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5733790791273234246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 1.9999999, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
