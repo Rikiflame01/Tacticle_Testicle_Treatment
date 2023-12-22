@@ -10,6 +10,7 @@ public class SFXManager : MonoBehaviour
     public AudioClip playerDamageReceived;
     public AudioClip playerDeath;
     public AudioClip enemyGrunt;
+    public AudioClip ConfettiCannon;
     //public AudioClip playerFootstep;
     public AudioClip shooting;
     public AudioClip bossDamage;

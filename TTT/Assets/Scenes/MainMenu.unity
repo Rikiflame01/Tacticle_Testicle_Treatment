@@ -956,6 +956,7 @@ MonoBehaviour:
     type: 3}
   playerDeath: {fileID: 8300000, guid: f511555ab88e9b541b929ae1265dc0d1, type: 3}
   enemyGrunt: {fileID: 8300000, guid: 4639808cf679d5d4eab73709445e98ae, type: 3}
+  ConfettiCannon: {fileID: 8300000, guid: 924f2cb138d317844b1b25b12b4af914, type: 3}
   shooting: {fileID: 8300000, guid: 7cf8755036e0f5e4abf5608b49238a35, type: 3}
   bossDamage: {fileID: 8300000, guid: 06f4e3897a52c614b9c7e7f6255e231f, type: 3}
   itemPickup: {fileID: 8300000, guid: 21ba4f1a293a2487587068d7bbe15106, type: 3}

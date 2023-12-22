@@ -16,7 +16,11 @@ public class EffectsManager : MonoBehaviour
 
     private void HandleEnemyDeath(Vector3 deathPosition)
     {
-        // Instantiate the particle effect at the enemy's feet
-        Instantiate(particleEffectPrefab, deathPosition, Quaternion.identity);
+        if (gameObject.tag == "MeleeEnemy")
+        {
+            Instantiate(particleEffectPrefab, deathPosition, Quaternion.identity);
+            SFXManager.Instance.PlaySFX(SFXManager.Instance.ConfettiCannon);
+        }
+        
     }
 }
