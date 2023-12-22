@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4578187266316003136}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.76877797, z: -0, w: 0.6395158}
-  m_LocalPosition: {x: -0.019, y: -0.122, z: -0.134}
+  m_LocalPosition: {x: 0.026, y: -0.122, z: 0.107}
   m_LocalScale: {x: 0.29518095, y: 0.29518098, z: 0.29518095}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -221,6 +221,8 @@ MonoBehaviour:
   patrolPoints: []
   patrolSpeed: 15
   chaseSpeed: 40
+  lookAtPlayerRange: 60
+  attackDuration: 2
 --- !u!114 &2167199317607021964
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,12 +10,14 @@ public class EnemyController : MonoBehaviour
     public Transform[] patrolPoints;
     public float patrolSpeed = 3.5f;
     public float chaseSpeed = 5.5f;
+    public float lookAtPlayerRange = 60f;
+    public float attackDuration = 2f; // Duration of the attack state
 
     private Transform eyeOrigin;
     private Transform playerTransform;
     private NavMeshAgent agent;
-    public EnemyState CurrentState { get; private set; } = EnemyState.Walking;
     private float timeOutOfSight = 0f;
+    private float attackTime = 0f; // Timer for attack duration
     private int currentPatrolIndex = 0;
 
     public enum EnemyState
@@ -27,6 +29,8 @@ public class EnemyController : MonoBehaviour
         Walking1,
         Walking2
     }
+
+    public EnemyState CurrentState { get; private set; } = EnemyState.Walking;
 
     private void Awake()
     {
@@ -43,7 +47,10 @@ public class EnemyController : MonoBehaviour
         if (canSeePlayer)
         {
             timeOutOfSight = 0f;
-            ChangeState(EnemyState.Chasing);
+            if (CurrentState != EnemyState.Chasing)
+            {
+                ChangeState(EnemyState.Chasing);
+            }
         }
         else if (CurrentState == EnemyState.Chasing)
         {
@@ -54,13 +61,35 @@ public class EnemyController : MonoBehaviour
             }
         }
 
+        if (CurrentState == EnemyState.AttackingL || CurrentState == EnemyState.AttackingR)
+        {
+            attackTime += Time.deltaTime;
+            if (attackTime >= attackDuration)
+            {
+                attackTime = 0f;
+                ChangeState(canSeePlayer ? EnemyState.Chasing : EnemyState.Walking);
+            }
+        }
+
         if (CurrentState == EnemyState.Chasing)
         {
             agent.SetDestination(playerTransform.position);
         }
-        else
+        else if (CurrentState == EnemyState.Walking)
         {
             Patrol();
+            RotateTowardsPlayer();
+        }
+    }
+
+    private void RotateTowardsPlayer()
+    {
+        if (Vector3.Distance(transform.position, playerTransform.position) <= lookAtPlayerRange)
+        {
+            Vector3 directionToPlayer = playerTransform.position - transform.position;
+            directionToPlayer.y = 0; // Only rotate on the y-axis
+            Quaternion rotationToPlayer = Quaternion.LookRotation(directionToPlayer);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotationToPlayer, Time.deltaTime * patrolSpeed);
         }
     }
 
@@ -68,10 +97,9 @@ public class EnemyController : MonoBehaviour
     {
         CurrentState = newState;
         agent.speed = (CurrentState == EnemyState.Chasing) ? chaseSpeed : patrolSpeed;
-
-        if (CurrentState != EnemyState.Chasing && CurrentState != EnemyState.AttackingL && CurrentState != EnemyState.AttackingR)
+        if (newState == EnemyState.AttackingL || newState == EnemyState.AttackingR)
         {
-            CurrentState = EnemyState.Walking;  // Ensure Walking state when not chasing or attacking
+            attackTime = 0f; // Reset attack timer when entering an attack state
         }
     }
 
