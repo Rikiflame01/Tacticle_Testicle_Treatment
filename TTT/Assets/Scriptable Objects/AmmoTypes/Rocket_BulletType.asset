@@ -15,5 +15,6 @@ MonoBehaviour:
   bulletName: Rocket
   bulletPrefab: {fileID: 2625780890174771059, guid: 604bb100b43b7b044b4c60971dcdb7da,
     type: 3}
-  maxAmmo: 50
-  currentAmmo: 50
+  maxAmmo: 5
+  currentAmmo: 5
+  cooldownTime: 3

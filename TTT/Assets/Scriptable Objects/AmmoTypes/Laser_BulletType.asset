@@ -15,5 +15,6 @@ MonoBehaviour:
   bulletName: Laser
   bulletPrefab: {fileID: 3123075598482578652, guid: 04d94aa3c7f24bc44a3483c44a0c053b,
     type: 3}
-  maxAmmo: 50
-  currentAmmo: 50
+  maxAmmo: 5
+  currentAmmo: 5
+  cooldownTime: 5

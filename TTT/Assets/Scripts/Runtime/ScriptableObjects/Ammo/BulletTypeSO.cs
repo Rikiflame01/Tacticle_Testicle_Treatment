@@ -14,6 +14,10 @@ namespace TTT
         public int maxAmmo;
         public int currentAmmo;
 
+        public float cooldownTime; // Cooldown time in seconds
+        private float lastFireTime; // Last time the bullet was fired
+
+
         #endregion FIELDS
 
         #region METHODS
@@ -33,11 +37,17 @@ namespace TTT
 
         public GameObject getBulletPrefab() => bulletPrefab;
 
+        public bool CanFire()
+        {
+            return Time.time - lastFireTime >= cooldownTime;
+        }
+
         public void fire()
         {
-            if (currentAmmo > 0)
+            if (currentAmmo > 0 && CanFire())
             {
                 currentAmmo--;
+                lastFireTime = Time.time; // Update last fire time
             }
         }
 

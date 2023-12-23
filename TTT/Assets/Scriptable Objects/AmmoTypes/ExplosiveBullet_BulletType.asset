@@ -15,5 +15,6 @@ MonoBehaviour:
   bulletName: Explosive
   bulletPrefab: {fileID: 5664262122979316393, guid: a51a4d1c6b299634488e72458ccc803a,
     type: 3}
-  maxAmmo: 100
-  currentAmmo: 100
+  maxAmmo: 5
+  currentAmmo: 5
+  cooldownTime: 3

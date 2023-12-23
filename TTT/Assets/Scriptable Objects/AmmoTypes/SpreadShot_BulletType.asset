@@ -15,5 +15,6 @@ MonoBehaviour:
   bulletName: SpreadShot
   bulletPrefab: {fileID: 1694726128614835034, guid: 8495c212db46f5349a5e74e808647ec4,
     type: 3}
-  maxAmmo: 100
-  currentAmmo: 100
+  maxAmmo: 5
+  currentAmmo: 5
+  cooldownTime: 5

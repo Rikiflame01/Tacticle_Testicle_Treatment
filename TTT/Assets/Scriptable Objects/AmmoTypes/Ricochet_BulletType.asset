@@ -15,5 +15,6 @@ MonoBehaviour:
   bulletName: Ricochet
   bulletPrefab: {fileID: 4046250473123842298, guid: 8e871052f06cdec4985acb0ad054957b,
     type: 3}
-  maxAmmo: 250
-  currentAmmo: 250
+  maxAmmo: 5
+  currentAmmo: 5
+  cooldownTime: 4
