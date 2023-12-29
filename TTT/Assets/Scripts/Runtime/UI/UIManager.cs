@@ -17,13 +17,17 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        canvases.Add(UICanvas.MainMenu, mainMenuCanvas);
-        canvases.Add(UICanvas.Settings, settingsCanvas);
-        canvases.Add(UICanvas.Tutorial, tutorialCanvas);
-        canvases.Add(UICanvas.Credits, creditsCanvas);
-        canvases.Add(UICanvas.Learn, learnCanvas);
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            canvases.Add(UICanvas.MainMenu, mainMenuCanvas);
+            canvases.Add(UICanvas.Settings, settingsCanvas);
+            canvases.Add(UICanvas.Tutorial, tutorialCanvas);
+            canvases.Add(UICanvas.Credits, creditsCanvas);
+            canvases.Add(UICanvas.Learn, learnCanvas);
 
-        ActivateCanvas(UICanvas.MainMenu);
+            ActivateCanvas(UICanvas.MainMenu);
+        }
+
     }
 
     public void ActivateCanvas(UICanvas canvasToActivate)
@@ -62,6 +66,11 @@ public class UIManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("SelectLevel");
+    }
+
+    public void BackToMain()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public GameObject mainMenuCanvas;
