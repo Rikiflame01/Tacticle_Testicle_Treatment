@@ -36,7 +36,17 @@ namespace TTT
 
         private void Start()
         {
-            BriefingText = GetComponentInChildren<TextMeshProUGUI>();
+            GameObject textGameObject = GameObject.Find("Text");
+            if (textGameObject != null)
+            {
+                BriefingText = textGameObject.GetComponent<TextMeshProUGUI>();
+            }
+            else
+            {
+                Debug.LogError("Text GameObject not found in the hierarchy.");
+                return;
+            }
+
             skip = false;
             FinishedBriefing = false;
             switch (PlayerData.GetCurrentLevel())
@@ -44,7 +54,6 @@ namespace TTT
                 case 1:
                     StartCoroutine(TypeWriter(Brief1));
                     break;
-
                 case 2:
                     StartCoroutine(TypeWriter(Brief2));
                     break;

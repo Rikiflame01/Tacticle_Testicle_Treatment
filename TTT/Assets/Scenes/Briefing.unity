@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 694646811}
   - component: {fileID: 694646813}
   - component: {fileID: 694646812}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Hint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
