@@ -27,6 +27,7 @@ namespace TTT
         private QuizQuestionSO RandomQuestion;
         private GameObject _QuizUIPanel;
         private GameObject _AnswerButtonsPanel;
+        private Scene CurrentScene;
 
         #endregion FIELDS
 
@@ -34,6 +35,9 @@ namespace TTT
 
         private void Start()
         {
+            CurrentScene = SceneManager.GetActiveScene();
+            Debug.Log(CurrentScene.name);
+
             //PlayerData.Reset();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -48,12 +52,6 @@ namespace TTT
                 _AnswerButtons[i] = _AnswerButtonsPanel.transform.GetChild(i).GetComponent<Button>();
                 _AnswerButtonTexts[i] = _AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
             }
-            /*float tmpScreenHeight = Screen.height;
-            float tmpScreenWidth = Screen.width;
-            print(tmpScreenWidth + ", " + tmpScreenHeight);
-            _AnswerButtonsPanel.GetComponent<GridLayout>() = new Vector2(tmpScreenWidth * 0.4f, tmpScreenHeight * 0.1f);
-            _QuizUIPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(_QuizUIPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x * 0.99f, tmpScreenHeight * 0.99f);
-            _AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(_AnswerButtonsPanel.GetComponent<RectTransform>().sizeDelta.x, tmpScreenHeight * 0.4f);*/
 
             RandomQuestion = GameData.GetRandomQuestionInLevel(PlayerData.GetQuestionLevel());
             _QuestionTestBox.text = RandomQuestion.GetQuestionText();
@@ -89,9 +87,19 @@ namespace TTT
 
                 if (choice_1 == null && choice_2 == null)
                 {
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
-                    PlayerData.SetQuizStarted(false);
-                    SceneManager.UnloadSceneAsync("quiz");
+                    if (CurrentScene.ToString() == "Level1")
+                    {
+                        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
+                        PlayerData.SetQuizStarted(false);
+                        SceneManager.UnloadSceneAsync("quiz");
+                    }
+                    else if (CurrentScene.ToString() == "TesticleBossMap")
+                    {
+                        SceneManager.SetActiveScene(SceneManager.GetSceneByName("TesticleBossMap"));
+                        PlayerData.SetQuizStarted(false);
+                        SceneManager.UnloadSceneAsync("quiz");
+                    }
+
                 }
 
                 if (choice_1 != null)
@@ -120,17 +128,28 @@ namespace TTT
             }
             else
             {
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
-                PlayerData.SetQuizStarted(false);
-                SceneManager.UnloadSceneAsync("quiz");
+                if (CurrentScene.ToString() == "Level1")
+                {
+                    SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
+                    PlayerData.SetQuizStarted(false);
+                    SceneManager.UnloadSceneAsync("quiz");
+                }
+                else
+                    if (CurrentScene.ToString() == "TesticleBossMap")
+                {
+                    SceneManager.SetActiveScene(SceneManager.GetSceneByName("TesticleBossMap"));
+                    PlayerData.SetQuizStarted(false);
+                    SceneManager.UnloadSceneAsync("quiz");
+                }
+
+                }
             }
-        }
 
         private void OnBtnClicked(BulletTypeSO Choice)
         {
             PlayerAmmo.AddBulletType(Choice);
             PlayerData.InitializeAmmoSO();
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level1"));
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(CurrentScene.name));
             PlayerData.SetQuizStarted(false);
             SceneManager.UnloadSceneAsync("Quiz");
         }
