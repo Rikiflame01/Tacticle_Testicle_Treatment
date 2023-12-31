@@ -29,6 +29,7 @@ public class BossAttack : MonoBehaviour
     {
         enemyController = GetComponent<EnemyController>();
 
+
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject)
         {
@@ -96,6 +97,7 @@ public class BossAttack : MonoBehaviour
 
     private void RangedAttackPlayer()
     {
+        Debug.Log("Attempting to perform a ranged attack.");
         if (projectilePrefab == null)
         {
             Debug.LogError("Projectile Prefab is not assigned in BossAttack script.");

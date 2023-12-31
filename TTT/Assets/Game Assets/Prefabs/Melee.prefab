@@ -223,6 +223,7 @@ MonoBehaviour:
   patrolSpeed: 15
   chaseSpeed: 80
   lookAtPlayerRange: 60
+  attackDuration: 2
 --- !u!114 &2167199317607021964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89046fc4ecee0a4ab8fc6e1f07f4123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 60
+  attackRange: 30
   attackDamage: 35
   attackCooldown: 1
   knockbackForce: 0

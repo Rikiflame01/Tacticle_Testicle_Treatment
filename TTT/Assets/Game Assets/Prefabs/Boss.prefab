@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1847921089246493744}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.76877797, z: -0, w: 0.6395158}
-  m_LocalPosition: {x: 0.029, y: -0.139, z: 0.128}
+  m_LocalPosition: {x: 0.061, y: -0.139, z: 0.302}
   m_LocalScale: {x: 0.29518095, y: 0.29518098, z: 0.29518095}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c8122783a17554d9e6f1eeadafbd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 1000
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeAttackRange: 60
-  meleeAttackDamage: 10
+  meleeAttackDamage: 45
   meleeAttackCooldown: 15
   meleeKnockbackForce: 5
   projectilePrefab: {fileID: 4618991546387914938, guid: 30107db781597834e8b6d94d3d2fec50,
