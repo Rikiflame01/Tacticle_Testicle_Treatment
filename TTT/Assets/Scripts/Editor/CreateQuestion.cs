@@ -98,7 +98,7 @@ public class CreateQuestion : EditorWindow
         //Debug.Log("Set Question Level");
         questionSO.SetQuestionIndex(gameDataSO.GetQuestionIndex());
         //Debug.Log("Set Question Index");
-        gameDataSO.AddQusetionToArray(questionSO);
+        gameDataSO.AddQuestionToArray(questionSO);
         //Debug.Log("Added Question game data to Array");
         gameDataSO.IncrementQuestionIndex();
         //Debug.Log("Incremented Question Index");

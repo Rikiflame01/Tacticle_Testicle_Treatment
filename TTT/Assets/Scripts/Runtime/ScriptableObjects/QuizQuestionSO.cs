@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "QuizQuestionSO", menuName = "ScriptableObjects/QuizQuestionSO", order = 90)]
 [System.Serializable]
 public class QuizQuestionSO : ScriptableObject
 {
+    public enum QuestionType
+    {
+        MultipleChoice,
+        TrueFalse
+        // Add other types as needed
+    }
+
     [SerializeField][TextArea] private string QuestionText;
     [SerializeField] private QuestionAnswerSt[] QuestionAnswers = new QuestionAnswerSt[4];
+    [SerializeField] private QuestionType questionType;
     public int QuestionIndex;
     public int QuestionLevel;
 
@@ -22,15 +29,17 @@ public class QuizQuestionSO : ScriptableObject
 
     public string[] GetAnswerText()
     {
-        string[] tmp = new string[4];
-        tmp[0] = QuestionAnswers[0].GetAnswerText();
-        tmp[1] = QuestionAnswers[1].GetAnswerText();
-        tmp[2] = QuestionAnswers[2].GetAnswerText();
-        tmp[3] = QuestionAnswers[3].GetAnswerText();
+        string[] tmp = new string[QuestionAnswers.Length];
+        for (int i = 0; i < QuestionAnswers.Length; i++)
+        {
+            tmp[i] = QuestionAnswers[i].GetAnswerText();
+        }
         return tmp;
     }
 
     public bool IsCorrectAnswer(int index) => QuestionAnswers[index].GetIsCorrect();
+
+    public QuestionType GetQuestionType() => questionType;
 
     public int GetQuestionIndex() => QuestionIndex;
 

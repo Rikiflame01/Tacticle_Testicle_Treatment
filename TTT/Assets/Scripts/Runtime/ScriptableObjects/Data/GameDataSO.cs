@@ -9,7 +9,6 @@ namespace ScriptableObjects
         public QuizDataSt quizDataSt;
 
         public void SetQuestionIndex(int index) => quizDataSt.SetQuestionIndex(index);
-
         public int GetQuestionIndex() => quizDataSt.GetQuestionIndex();
 
         public void ResetQuestions()
@@ -20,17 +19,20 @@ namespace ScriptableObjects
 
         public void IncrementQuestionIndex() => quizDataSt.IncrementQuestionIndex();
 
-        public void AddQusetionToArray(QuizQuestionSO Quest) => quizDataSt.AddQuestion(Quest);
+        public void AddQuestionToArray(QuizQuestionSO question) => quizDataSt.AddQuestion(question);
 
-        public void AddQuestionArray(QuizQuestionSO[] Quests) => quizDataSt.AddQuestionArray(Quests);
+        public void AddQuestionArray(QuizQuestionSO[] questions) => quizDataSt.ReplaceQuestionArray(questions);
 
         public QuizQuestionSO[] GetQuizQuestionArray() => quizDataSt.GetQuestionArray();
 
-        public QuizQuestionSO GetRandomQuestionInLevel(int level)
+        public QuizQuestionSO GetRandomQuestion()
         {
-            QuizQuestionSO[] questionSOs = quizDataSt.GetQuestionsInLevel(1);
-            int tmpRnd = Random.Range(0, questionSOs.Length - 1);
-            return questionSOs[tmpRnd];
+            QuizQuestionSO[] allQuestions = quizDataSt.GetQuestionArray();
+            if (allQuestions == null || allQuestions.Length == 0)
+                return null;
+
+            int randomIndex = Random.Range(0, allQuestions.Length);
+            return allQuestions[randomIndex];
         }
     }
 }

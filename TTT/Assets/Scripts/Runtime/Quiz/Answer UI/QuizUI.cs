@@ -32,13 +32,12 @@ namespace TTT
         #endregion FIELDS
 
         #region UNITY METHODS
-
         private void Start()
         {
             CurrentScene = SceneManager.GetActiveScene();
             Debug.Log(CurrentScene.name);
 
-            //PlayerData.Reset();
+            // Initialization Code
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             UpgradeChoice_1_Text = UpgradeChoice_1.GetComponentInChildren<TextMeshProUGUI>();
@@ -47,17 +46,27 @@ namespace TTT
             _QuizUIPanel = GameObject.FindGameObjectWithTag("QuizPanel");
             _AnswerButtonsPanel = GameObject.FindGameObjectWithTag("AnswerButtons");
             _QuestionTestBox = _QuizUIPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < _AnswerButtons.Length; i++)
             {
                 _AnswerButtons[i] = _AnswerButtonsPanel.transform.GetChild(i).GetComponent<Button>();
                 _AnswerButtonTexts[i] = _AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
             }
 
-            RandomQuestion = GameData.GetRandomQuestionInLevel(PlayerData.GetQuestionLevel());
+            RandomQuestion = GameData.GetRandomQuestion();
             _QuestionTestBox.text = RandomQuestion.GetQuestionText();
             string[] answers = RandomQuestion.GetAnswerText();
-            for (int i = 0; i < 4; i++)
+
+            // Adjust UI based on question type
+            int buttonCount = RandomQuestion.GetQuestionType() == QuizQuestionSO.QuestionType.TrueFalse ? 2 : 4;
+            for (int i = 0; i < buttonCount; i++)
+            {
                 _AnswerButtonTexts[i].text = answers[i];
+                _AnswerButtons[i].gameObject.SetActive(true);
+            }
+            for (int i = buttonCount; i < 4; i++)
+            {
+                _AnswerButtons[i].gameObject.SetActive(false);
+            }
         }
 
         #endregion UNITY METHODS

@@ -16,11 +16,8 @@ MonoBehaviour:
   QuestionAnswers:
   - AnswerText: True
     IsCorrect: 1
-  - AnswerText: True
-    IsCorrect: 1
   - AnswerText: False
     IsCorrect: 0
-  - AnswerText: False
-    IsCorrect: 0
+  questionType: 1
   QuestionIndex: 3
   QuestionLevel: 1
